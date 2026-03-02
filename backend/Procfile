@@ -1,0 +1,1 @@
+web: gunicorn tradeflow_api.wsgi --log-file -
