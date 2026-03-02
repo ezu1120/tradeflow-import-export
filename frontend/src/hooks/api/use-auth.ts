@@ -17,12 +17,12 @@ export const useSignInWithEmailMutation = () => {
 
   return useMutation({
     mutationFn: async (data: SignInput) => {
-      const res = await authClient.signIn.email(data);
+      const res = await authClient.signIn(data.email, data.password);
 
-      if (res.data?.user) {
+      if (res?.user) {
         toast.success("Login successful!", { position: "top-center" });
         dispatch(
-          loginUser({ user: res.data?.user as any, token: res.data?.token })
+          loginUser({ user: res?.user as any, token: res?.token })
         );
         navigate("/account");
 
@@ -47,20 +47,17 @@ export const useSignUpWithEmailMutation = () => {
       name: string;
       role: string;
     }) => {
-      return authClient.signUp.email(data, {
-        onSuccess: () => {
-          toast("Success", {
-            description: "Your account has been created successfully",
-            position: "top-center",
-          });
-          navigate("/account");
-        },
-        onError: ({ error }: { error: any }) => {
-          toast("Unsuccessfull", {
-            description: error.message,
-            position: "top-center",
-          });
-        },
+      return authClient.signUp(data.email, data.password, data.name).then(() => {
+        toast("Success", {
+          description: "Your account has been created successfully",
+          position: "top-center",
+        });
+        navigate("/account");
+      }).catch((error: any) => {
+        toast("Unsuccessfull", {
+          description: error.message,
+          position: "top-center",
+        });
       });
     },
   });

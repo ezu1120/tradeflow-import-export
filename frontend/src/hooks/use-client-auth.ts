@@ -51,12 +51,11 @@ export function useClientAuth() {
   const fetchUser = useCallback(async () => {
     dispatch(setStatus({ status: "fetching" }));
     try {
-      const { data: session, error } = await authClient.getSession();
+      const session = await authClient.getSession();
 
-      if (error) {
+      if (!session) {
         console.warn(
-          "fetchUser: network or server error, keeping current user",
-          error
+          "fetchUser: no session found"
         );
         dispatch(setStatus({ status: "error" }));
         return; // don't log out
@@ -64,7 +63,7 @@ export function useClientAuth() {
 
       if (session && session.user) {
         const u = session.user;
-        const tok = session.session?.token;
+        const tok = session.token;
         dispatch(
           loginUser({
             user: u as any,

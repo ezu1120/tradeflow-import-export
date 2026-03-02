@@ -10,6 +10,11 @@ export interface AuthResponse {
   token: string;
 }
 
+export interface Session {
+  user: User;
+  token: string;
+}
+
 export const authClient = {
   signIn: async (email: string, password: string): Promise<AuthResponse> => {
     // Placeholder for authentication logic
@@ -21,9 +26,14 @@ export const authClient = {
     throw new Error("Registration not implemented");
   },
   
-  signOut: async (): Promise<void> => {
+  signOut: async (): Promise<{ error: Error | null }> => {
     // Placeholder for sign out logic
-    localStorage.removeItem("auth_token");
+    try {
+      localStorage.removeItem("auth_token");
+      return { error: null };
+    } catch (error) {
+      return { error: error as Error };
+    }
   },
   
   getCurrentUser: async (): Promise<User | null> => {
@@ -32,6 +42,15 @@ export const authClient = {
     if (!token) return null;
     
     // Return mock user for now
+    return null;
+  },
+  
+  getSession: async (): Promise<Session | null> => {
+    // Placeholder for getting session
+    const token = localStorage.getItem("auth_token");
+    if (!token) return null;
+    
+    // Return mock session for now
     return null;
   }
 };
