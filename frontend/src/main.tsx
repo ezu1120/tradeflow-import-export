@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <TanstackQueryProvider>
-        <ThemeProvider defaultTheme="light">
+        <ThemeProvider defaultTheme="dark" storageKey="tradeflow-theme">
           <Provider store={store}>
             <App />
             <Toaster />
