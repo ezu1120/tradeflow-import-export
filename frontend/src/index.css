@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Premium Trust-Based Color Palette: Deep Navy #101828, Rich Dark Gray #1E293B, Action Gold #D4AF37 */
+  --background: 30 41 59; /* Rich dark gray background */
+  --foreground: 248 250 252; /* Light text */
+  --card: 51 65 85;
+  --card-foreground: 248 250 252;
+  --popover: 51 65 85;
+  --popover-foreground: 248 250 252;
+  --primary: 16 24 40; /* Deep Navy #101828 */
+  --primary-foreground: 255 255 255;
+  --secondary: 212 175 55; /* Action Gold #D4AF37 */
+  --secondary-foreground: 16 24 40;
+  --muted: 51 65 85;
+  --muted-foreground: 148 163 184;
+  --accent: 212 175 55; /* Action Gold */
+  --accent-foreground: 16 24 40;
+  --destructive: 239 68 68;
+  --border: 71 85 105;
+  --input: 71 85 105;
+  --ring: 212 175 55;
+  --chart-1: 16 24 40;
+  --chart-2: 212 175 55;
+  --chart-3: 148 163 184;
+  --chart-4: 100 116 139;
+  --chart-5: 203 213 225;
+  --sidebar: 51 65 85;
+  --sidebar-foreground: 248 250 252;
+  --sidebar-primary: 16 24 40;
+  --sidebar-primary-foreground: 255 255 255;
+  --sidebar-accent: 71 85 105;
+  --sidebar-accent-foreground: 248 250 252;
+  --sidebar-border: 71 85 105;
+  --sidebar-ring: 212 175 55;
+}
+
+.dark {
+  --background: 15 23 42; /* Dark slate */
+  --foreground: 248 250 252;
+  --card: 30 41 59;
+  --card-foreground: 248 250 252;
+  --popover: 30 41 59;
+  --popover-foreground: 248 250 252;
+  --primary: 16 24 40; /* Deep Navy #101828 */
+  --primary-foreground: 255 255 255;
+  --secondary: 212 175 55; /* Action Gold */
+  --secondary-foreground: 15 23 42;
+  --muted: 51 65 85;
+  --muted-foreground: 148 163 184;
+  --accent: 212 175 55;
+  --accent-foreground: 15 23 42;
+  --destructive: 239 68 68;
+  --border: 51 65 85;
+  --input: 51 65 85;
+  --ring: 212 175 55;
+  --chart-1: 16 24 40;
+  --chart-2: 212 175 55;
+  --chart-3: 148 163 184;
+  --chart-4: 100 116 139;
+  --chart-5: 71 85 105;
+  --sidebar: 30 41 59;
+  --sidebar-foreground: 248 250 252;
+  --sidebar-primary: 16 24 40;
+  --sidebar-primary-foreground: 255 255 255;
+  --sidebar-accent: 51 65 85;
+  --sidebar-accent-foreground: 248 250 252;
+  --sidebar-border: 51 65 85;
+  --sidebar-ring: 212 175 55;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  /* Lazy loading image optimization */
+  img {
+    @apply transition-opacity duration-300;
+  }
+  
+  img[loading="lazy"] {
+    @apply opacity-0;
+  }
+  
+  img[loading="lazy"].loaded {
+    @apply opacity-100;
+  }
+  
+  /* Fade-in animation for scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.px-c {
+  @apply px-4 sm:px-8 md:px-18;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Animation utilities (match old Tailwind config names) */
+@layer utilities {
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+
+  .animate-marquee {
+    animation: marquee var(--duration) linear infinite;
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration) linear infinite;
+  }
+
+  .animate-skeleton-shimmer {
+    animation: shimmer 1.2s infinite ease-in-out;
+  }
+}

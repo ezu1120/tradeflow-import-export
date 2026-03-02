@@ -1,0 +1,34 @@
+═══════════════════════════════════════════════════════════
+    TRADEFLOW ADMIN PANEL - ACCESS INFORMATION
+═══════════════════════════════════════════════════════════
+
+🌐 ADMIN URL
+   http://localhost:8000/admin/
+
+🔐 LOGIN CREDENTIALS
+   Username: admin
+   Email: admin@tradeflow.com
+   Password: [the password you just entered]
+
+📊 WHAT YOU CAN DO
+   ✅ Manage blog posts and categories
+   ✅ View and process quote requests
+   ✅ Handle contact messages
+   ✅ Manage newsletter subscriptions
+   ✅ Create additional admin users
+
+📝 SAMPLE DATA LOADED
+   ✅ 5 Blog categories
+   ✅ 5 Blog posts (2 featured)
+   ✅ Ready for testing
+
+🎯 QUICK ACTIONS
+   • Create new blog post: /admin/blog/blogpost/add/
+   • View quotes: /admin/quotes/quoterequest/
+   • View messages: /admin/contacts/contactmessage/
+   • View subscribers: /admin/contacts/newsletter/
+
+📚 DOCUMENTATION
+   See ADMIN_GUIDE.md for detailed instructions
+
+═══════════════════════════════════════════════════════════

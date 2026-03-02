@@ -1,3 +1,60 @@
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Frontend (React/Vite)
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/build/
+
+# Backend (Django/Python)
+backend/venv/
+backend/venv_old/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+backend/db.sqlite3
+backend/db.sqlite3.backup
+backend/*.db
+backend/media/
+backend/staticfiles/
+backend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
 # Logs
 logs
 *.log
@@ -7,10 +64,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Node modules
+node_modules/
+jspm_packages/
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +78,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vscode/
+*.code-workspace
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Documentation (optional - remove if you want to include)
+*.md
+!README.md
+!backend/README.md
+!frontend/README.md
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

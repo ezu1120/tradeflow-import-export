@@ -1,0 +1,38 @@
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    """
+    API Root - Welcome endpoint with links to all available endpoints
+    """
+    return Response({
+        'message': 'Welcome to TradeFlow API',
+        'version': '1.0',
+        'endpoints': {
+            'blog': {
+                'posts': request.build_absolute_uri('/api/blog/posts/'),
+                'featured_posts': request.build_absolute_uri('/api/blog/posts/featured/'),
+                'categories': request.build_absolute_uri('/api/blog/categories/'),
+            },
+            'quotes': {
+                'list_create': request.build_absolute_uri('/api/quotes/'),
+            },
+            'contacts': {
+                'messages': request.build_absolute_uri('/api/contacts/messages/'),
+                'newsletter': request.build_absolute_uri('/api/contacts/newsletter/'),
+            },
+            'admin': request.build_absolute_uri('/admin/'),
+        },
+        'documentation': {
+            'blog_posts': 'GET /api/blog/posts/ - List all blog posts',
+            'blog_post_detail': 'GET /api/blog/posts/{slug}/ - Get single post',
+            'featured_posts': 'GET /api/blog/posts/featured/ - Get featured posts',
+            'categories': 'GET /api/blog/categories/ - List categories',
+            'submit_quote': 'POST /api/quotes/ - Submit quote request',
+            'submit_contact': 'POST /api/contacts/messages/ - Submit contact message',
+            'subscribe_newsletter': 'POST /api/contacts/newsletter/ - Subscribe to newsletter',
+        }
+    })
