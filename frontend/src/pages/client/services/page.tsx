@@ -354,10 +354,10 @@ export default function ImportExportServices() {
           className="w-full"
         >
           <TabsList className="grid w-full max-w-xs grid-cols-2 mb-6 bg-slate-800/50 border border-slate-700/50">
-            <TabsTrigger value="import" className="text-base data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#101828]">
+            <TabsTrigger value="import" className="text-base text-white data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#101828]">
               Import
             </TabsTrigger>
-            <TabsTrigger value="export" className="text-base data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#101828]">
+            <TabsTrigger value="export" className="text-base text-white data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#101828]">
               Export
             </TabsTrigger>
           </TabsList>
