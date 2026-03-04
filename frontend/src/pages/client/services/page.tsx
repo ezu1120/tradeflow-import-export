@@ -2,7 +2,7 @@
 import { useState, useMemo } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, ChevronRight } from "lucide-react";
+import { Search, ChevronRight, Ship, FileCheck, Truck, Shield, Globe2, Package, Clock, HeadphonesIcon } from "lucide-react";
 import PageHeader from "./header";
 
 interface Product {
@@ -166,6 +166,51 @@ const highlights = [
   { label: "24/7 Support", description: "Always here to help" },
 ];
 
+const services = [
+  {
+    icon: Ship,
+    title: "International Shipping",
+    description: "Reliable sea, air, and land freight solutions connecting you to over 50 countries worldwide with real-time tracking.",
+    features: ["Sea Freight", "Air Freight", "Land Transport", "Express Delivery"],
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    icon: FileCheck,
+    title: "Customs Clearance",
+    description: "Expert handling of all customs documentation, tariff classification, and regulatory compliance to ensure smooth border crossings.",
+    features: ["Documentation", "Tariff Classification", "Duty Calculation", "Compliance"],
+    color: "from-[#D4AF37] to-yellow-600"
+  },
+  {
+    icon: Package,
+    title: "Warehousing & Storage",
+    description: "Secure, climate-controlled storage facilities with inventory management and distribution services at strategic locations.",
+    features: ["Climate Control", "Inventory Management", "Pick & Pack", "Distribution"],
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    icon: Shield,
+    title: "Cargo Insurance",
+    description: "Comprehensive insurance coverage protecting your shipments against loss, damage, and unforeseen circumstances during transit.",
+    features: ["Full Coverage", "Claims Support", "Risk Assessment", "Quick Processing"],
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    icon: Globe2,
+    title: "Trade Consulting",
+    description: "Expert guidance on international trade regulations, market entry strategies, and business expansion opportunities.",
+    features: ["Market Research", "Regulatory Advice", "Strategy Planning", "Risk Management"],
+    color: "from-indigo-500 to-blue-600"
+  },
+  {
+    icon: Truck,
+    title: "Door-to-Door Delivery",
+    description: "Complete logistics solution from pickup at origin to final delivery at destination with full tracking visibility.",
+    features: ["Pickup Service", "Last Mile Delivery", "Real-time Tracking", "Signature Confirmation"],
+    color: "from-orange-500 to-red-500"
+  },
+];
+
 export default function ImportExportServices() {
   const [activeTab, setActiveTab] = useState<"import" | "export">("import");
   const [searchQuery, setSearchQuery] = useState("");
@@ -194,7 +239,95 @@ export default function ImportExportServices() {
     <div className="w-full min-h-screen bg-gradient-to-b from-slate-900 to-slate-950">
       <PageHeader />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Services Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our <span className="text-[#D4AF37]">Services</span>
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Comprehensive import-export solutions designed to streamline your global trade operations
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {services.map((service, idx) => (
+              <Card
+                key={idx}
+                className="group relative overflow-hidden border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm hover:border-[#D4AF37]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#D4AF37]/10"
+              >
+                <CardContent className="p-6">
+                  {/* Icon with gradient background */}
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon className="w-7 h-7 text-white" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4AF37] transition-colors">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {/* Features List */}
+                  <ul className="space-y-2">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-slate-400">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Hover Effect */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Why Choose Us */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-12">
+            <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 text-center">
+              <Clock className="w-8 h-8 text-[#D4AF37] mx-auto mb-3" />
+              <h4 className="font-bold text-white mb-2">Fast Processing</h4>
+              <p className="text-sm text-slate-300">Quick turnaround on all shipments</p>
+            </div>
+            <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 text-center">
+              <Shield className="w-8 h-8 text-[#D4AF37] mx-auto mb-3" />
+              <h4 className="font-bold text-white mb-2">Secure & Safe</h4>
+              <p className="text-sm text-slate-300">Full insurance coverage available</p>
+            </div>
+            <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 text-center">
+              <Globe2 className="w-8 h-8 text-[#D4AF37] mx-auto mb-3" />
+              <h4 className="font-bold text-white mb-2">Global Network</h4>
+              <p className="text-sm text-slate-300">Presence in 50+ countries</p>
+            </div>
+            <div className="p-6 rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 text-center">
+              <HeadphonesIcon className="w-8 h-8 text-[#D4AF37] mx-auto mb-3" />
+              <h4 className="font-bold text-white mb-2">24/7 Support</h4>
+              <p className="text-sm text-slate-300">Always here when you need us</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="relative my-16">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-slate-700/50"></div>
+          </div>
+          <div className="relative flex justify-center">
+            <span className="bg-slate-900 px-6 py-2 text-slate-400 text-sm font-medium rounded-full border border-slate-700/50">
+              Browse Our Products
+            </span>
+          </div>
+        </div>
+
         {/* Features Grid - Simplified */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
           {highlights.map((item, idx) => (
