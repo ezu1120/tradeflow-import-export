@@ -3,6 +3,7 @@ import Routes from "./routes";
 import { useClientAuth } from "./hooks/use-client-auth";
 import { toast } from "sonner";
 import { useDeviceNetworkHandler } from "./hooks/use-network";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const { fetchUser } = useClientAuth();
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Routes />
     </>
   );

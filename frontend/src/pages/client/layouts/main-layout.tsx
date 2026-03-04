@@ -11,7 +11,7 @@ const MainLayout = () => {
     <div>
       <MainHeader />
 
-      <div className={isHomePage ? "" : "mt-[130px] min-h-[100vh]"}>
+      <div className={isHomePage ? "" : "mt-[100px] min-h-[100vh]"}>
         <Outlet />
       </div>
         <Footer />
