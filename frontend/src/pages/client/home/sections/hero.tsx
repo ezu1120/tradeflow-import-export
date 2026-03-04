@@ -7,7 +7,7 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#101828] pt-[100px]">
+    <section className="relative w-full h-screen overflow-hidden bg-[#101828] pt-[82px]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div
