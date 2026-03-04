@@ -1,0 +1,20 @@
+from django.core.management.base import BaseCommand
+from django.contrib.auth import get_user_model
+
+class Command(BaseCommand):
+    help = 'Create a superuser if none exists'
+
+    def handle(self, *args, **options):
+        User = get_user_model()
+        try:
+            if not User.objects.filter(username='admin').exists():
+                User.objects.create_superuser(
+                    username='admin',
+                    email='admin@tradeflow.com',
+                    password='1234@Abc'
+                )
+                self.stdout.write(self.style.SUCCESS('Superuser created successfully'))
+            else:
+                self.stdout.write(self.style.WARNING('Superuser already exists'))
+        except Exception as e:
+            self.stdout.write(self.style.ERROR(f'Error creating superuser: {e}'))
