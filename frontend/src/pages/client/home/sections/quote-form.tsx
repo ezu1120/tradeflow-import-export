@@ -68,7 +68,7 @@ export default function QuoteForm() {
   };
 
   return (
-    <section className="w-full py-20 md:py-28 relative overflow-hidden">
+    <section id="quote-form" className="w-full py-20 md:py-28 relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div

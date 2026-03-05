@@ -6,6 +6,13 @@ import { useNavigate } from "react-router-dom";
 export default function HeroSection() {
   const navigate = useNavigate();
 
+  const scrollToQuoteForm = () => {
+    const quoteSection = document.getElementById('quote-form');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="relative w-full h-screen overflow-hidden bg-[#101828] pt-[82px]">
       {/* Background Image with Overlay */}
@@ -52,7 +59,7 @@ export default function HeroSection() {
                 <Button
                   size="lg"
                   className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-[#101828] font-bold text-base h-12 px-8 rounded-xl shadow-2xl hover:shadow-[#D4AF37]/25 transition-all duration-300 transform hover:scale-105"
-                  onClick={() => navigate("/contact")}
+                  onClick={scrollToQuoteForm}
                 >
                   Request a Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
