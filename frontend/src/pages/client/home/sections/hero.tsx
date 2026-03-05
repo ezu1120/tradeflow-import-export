@@ -28,7 +28,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex items-center py-4">
+      <div className="relative h-full flex items-center py-4 mt-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
           <div className="max-w-4xl">
             <motion.div
@@ -37,20 +37,20 @@ export default function HeroSection() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               {/* Badge */}
-              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 mb-6">
+              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 mb-8">
                 <span className="text-[#D4AF37] text-xs font-semibold tracking-wide">
                   TRUSTED BY 2,000+ GLOBAL ENTERPRISES
                 </span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tight">
                 Global Trade,{" "}
                 <span className="text-[#D4AF37] block">Simplified.</span>
               </h1>
 
               {/* Sub-headline */}
-              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl font-light">
+              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-10 leading-relaxed max-w-3xl font-light">
                 Expert Import-Export solutions connecting your business to the world's most lucrative markets.
               </p>
 
@@ -77,7 +77,7 @@ export default function HeroSection() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-6 mt-10 pt-6 border-t border-white/10">
+              <div className="flex flex-wrap items-center gap-6 mt-12 pt-8 border-t border-white/10">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-[#D4AF37] mb-1">15+</div>
                   <div className="text-xs text-white/70 font-medium">Years Experience</div>
