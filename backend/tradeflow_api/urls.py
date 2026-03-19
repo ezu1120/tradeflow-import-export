@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import api_root
+from .views import api_root, admin_login
 from django.http import JsonResponse
 
 def home_view(request):
@@ -49,4 +49,5 @@ urlpatterns = [
     path('api/blog/', include('blog.urls')),
     path('api/quotes/', include('quotes.urls')),
     path('api/contacts/', include('contacts.urls')),
+    path('api/admin-panel/login/', admin_login, name='admin-login'),
 ]

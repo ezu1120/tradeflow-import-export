@@ -36,3 +36,33 @@ def api_root(request, format=None):
             'subscribe_newsletter': 'POST /api/contacts/newsletter/ - Subscribe to newsletter',
         }
     })
+
+
+from django.contrib.auth import authenticate
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+import secrets
+
+
+@api_view(['POST'])
+def admin_login(request):
+    """Custom admin panel login"""
+    username = request.data.get('username')
+    password = request.data.get('password')
+
+    user = authenticate(username=username, password=password)
+
+    if user and user.is_staff:
+        # Generate a simple token (use proper token auth in production)
+        token = secrets.token_hex(32)
+        return Response({
+            'token': token,
+            'user': {
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'is_staff': user.is_staff,
+            }
+        })
+    return Response({'error': 'Invalid credentials or insufficient permissions'}, status=status.HTTP_401_UNAUTHORIZED)
