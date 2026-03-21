@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Save, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { api } from "@/hooks/api";
 
 const BACKEND = import.meta.env.VITE_API_URL || "https://tradeflow-import-export-2.onrender.com";
 
@@ -89,12 +88,18 @@ export default function SiteSettingsPage() {
     setSaving(true);
     try {
       const token = localStorage.getItem("admin_token");
-      await api.patch("/api/settings/update/", settings, {
-        headers: { Authorization: `Bearer ${token}` },
+      const res = await fetch(`${BACKEND}/api/settings/update/`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(settings),
       });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       toast.success("Settings saved successfully");
-    } catch {
-      toast.error("Failed to save — backend may still be deploying");
+    } catch (err) {
+      toast.error("Failed to save settings");
     } finally {
       setSaving(false);
     }

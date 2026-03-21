@@ -29,7 +29,7 @@ export interface SiteSettings {
   instagram_url: string;
 }
 
-const defaultSettings: SiteSettings = {
+export const defaultSettings: SiteSettings = {
   company_name: "TradeFlow",
   company_tagline: "Global Trade, Simplified.",
   company_description: "Expert Import-Export solutions connecting your business to the world's most lucrative markets.",
@@ -56,22 +56,24 @@ const defaultSettings: SiteSettings = {
   instagram_url: "https://instagram.com",
 };
 
-let cachedSettings: SiteSettings | null = null;
-
 export function useSiteSettings() {
-  const [settings, setSettings] = useState<SiteSettings>(cachedSettings || defaultSettings);
-  const [loading, setLoading] = useState(!cachedSettings);
+  const [settings, setSettings] = useState<SiteSettings>(defaultSettings);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (cachedSettings) return;
     fetch(`${BACKEND}/api/settings/`)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
       .then((data) => {
-        cachedSettings = data;
         setSettings(data);
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        // fallback to defaults silently
+        setLoading(false);
+      });
   }, []);
 
   return { settings, loading };
