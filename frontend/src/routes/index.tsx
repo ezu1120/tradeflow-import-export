@@ -9,6 +9,7 @@ import AboutPage from "@/pages/client/about/page";
 import ServicesPage from "@/pages/client/services/page";
 import ContactPage from "@/pages/client/contact/page";
 import BlogPage from "@/pages/client/blog/page";
+import BlogDetailPage from "@/pages/client/blog/detail";
 import AdminLogin from "@/pages/admin/login";
 import AdminLayout from "@/pages/admin/layout";
 import AdminDashboard from "@/pages/admin/dashboard";
@@ -29,6 +30,7 @@ const Routes = () => {
         { path: "/services", element: <ServicesPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/blog", element: <BlogPage /> },
+        { path: "/blog/:slug", element: <BlogDetailPage /> },
         { path: "*", element: <NotFoundPage /> },
       ],
     },
