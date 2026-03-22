@@ -12,9 +12,12 @@ def get_settings(request):
     return Response(serializer.data)
 
 
-@api_view(['PATCH'])
+@api_view(['PATCH', 'OPTIONS'])
 def update_settings(request):
-    # Simple token check
+    if request.method == 'OPTIONS':
+        return Response(status=200)
+
+    # Simple token check - just verify Bearer header exists
     auth = request.headers.get('Authorization', '')
     if not auth.startswith('Bearer '):
         return Response({'error': 'Unauthorized'}, status=status.HTTP_401_UNAUTHORIZED)

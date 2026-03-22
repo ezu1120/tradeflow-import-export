@@ -92,16 +92,19 @@ export default function SiteSettingsPage() {
       const BACKEND = import.meta.env.VITE_API_URL || "https://tradeflow-import-export-2.onrender.com";
       const res = await fetch(`${BACKEND}/api/settings/update/`, {
         method: "PATCH",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token || "no-token"}` },
         body: JSON.stringify(settings),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(`HTTP ${res.status}: ${errText}`);
+      }
       const updated = await res.json();
       setSettings(updated);
       toast.success("Settings saved — changes are now live on the website");
-    } catch (err) {
-      toast.error("Failed to save settings");
-      console.error(err);
+    } catch (err: any) {
+      toast.error(`Failed to save: ${err.message}`);
+      console.error("Save error:", err);
     } finally {
       setSaving(false);
     }
