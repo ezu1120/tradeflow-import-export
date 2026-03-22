@@ -5,6 +5,7 @@ Django settings for tradeflow_api project.
 from pathlib import Path
 import os
 import dj_database_url
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -95,6 +96,10 @@ if os.environ.get('DATABASE_URL'):
         )
     }
 elif os.environ.get('MYSQL_HOST'):
+    _mysql_options = {'charset': 'utf8mb4'}
+    # Only require SSL in production (not local dev)
+    if not os.environ.get('DEBUG', 'False') == 'True':
+        _mysql_options['ssl'] = {'ssl-mode': 'REQUIRED'}
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -103,10 +108,7 @@ elif os.environ.get('MYSQL_HOST'):
             'PASSWORD': os.environ.get('MYSQL_PASSWORD', ''),
             'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
             'PORT': os.environ.get('MYSQL_PORT', '3306'),
-            'OPTIONS': {
-                'ssl': {'ssl-mode': 'REQUIRED'},
-                'charset': 'utf8mb4',
-            },
+            'OPTIONS': _mysql_options,
         }
     }
 else:
