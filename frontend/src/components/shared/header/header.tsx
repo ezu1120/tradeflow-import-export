@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./mobile-menu";
-import { useTheme } from "next-themes";
-import { ModeToggle } from "../mode-toggle";
 import { Link, useNavigate } from "react-router-dom";
 import TopBar from "./top-bar";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
+  const { settings } = useSiteSettings();
 
   const navLinks = [
     { label: "Home", href: "/" },
@@ -29,7 +29,7 @@ export default function Header() {
             <div className="w-7 h-7 bg-[#D4AF37] rounded-lg flex items-center justify-center">
               <Globe className="w-4 h-4 text-[#101828]" />
             </div>
-            <span className="font-bold text-base text-white">TradeFlow</span>
+            <span className="font-bold text-base text-white">{settings.company_name}</span>
           </div>
 
           {/* Desktop Navigation */}

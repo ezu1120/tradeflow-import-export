@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Save, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { SETTINGS_API } from "@/hooks/useSiteSettings";
 
 const BACKEND = import.meta.env.VITE_API_URL || "https://tradeflow-import-export-2.onrender.com";
 
@@ -67,7 +68,7 @@ export default function SiteSettingsPage() {
   const [apiAvailable, setApiAvailable] = useState(true);
 
   useEffect(() => {
-    fetch(`${BACKEND}/api/settings/`)
+    fetch(SETTINGS_API)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
@@ -88,18 +89,19 @@ export default function SiteSettingsPage() {
     setSaving(true);
     try {
       const token = localStorage.getItem("admin_token");
+      const BACKEND = import.meta.env.VITE_API_URL || "https://tradeflow-import-export-2.onrender.com";
       const res = await fetch(`${BACKEND}/api/settings/update/`, {
         method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(settings),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      toast.success("Settings saved successfully");
+      const updated = await res.json();
+      setSettings(updated);
+      toast.success("Settings saved — changes are now live on the website");
     } catch (err) {
       toast.error("Failed to save settings");
+      console.error(err);
     } finally {
       setSaving(false);
     }
