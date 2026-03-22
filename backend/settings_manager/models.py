@@ -6,7 +6,7 @@ class SiteSettings(models.Model):
     company_name = models.CharField(max_length=200, default='TradeFlow')
     company_tagline = models.CharField(max_length=300, default='Global Trade, Simplified.')
     company_description = models.TextField(default='Expert Import-Export solutions connecting your business to the world\'s most lucrative markets.')
-    company_email = models.EmailField(default='hello@tradehub.com')
+    company_email = models.CharField(max_length=200, default='hello@tradehub.com')
     company_phone = models.CharField(max_length=50, default='+251 991 001 124')
     company_address = models.CharField(max_length=300, default='123 Trade Street, New York, NY 10001')
 
@@ -27,7 +27,7 @@ class SiteSettings(models.Model):
     about_story = models.TextField(default='TradeFlow was founded with a simple mission: make international trade accessible to businesses of all sizes.')
 
     # Contact Info
-    contact_email = models.EmailField(default='info@globalexports.com')
+    contact_email = models.CharField(max_length=200, default='info@globalexports.com')
     contact_phone = models.CharField(max_length=50, default='+2519 11867911')
     contact_address = models.CharField(max_length=300, default='123 Trade Street, New York, NY 10001')
     working_hours = models.CharField(max_length=200, default='Mon-Fri, 9 AM - 6 PM')
