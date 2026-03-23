@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import Marquee from "@/components/ui/marquee";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { api } from "@/hooks/api";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 interface Testimonial { id: number; name: string; company: string; role: string; feedback: string; rating: number }
 
 const TestimonialMarquee = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
+  const { settings } = useSiteSettings();
 
   useEffect(() => {
     api.get("/api/content/testimonials/")
@@ -26,9 +28,9 @@ const TestimonialMarquee = () => {
       </div>
       <div className="relative">
         <header className="mb-16 text-center">
-          <p className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-4">CLIENT SUCCESS STORIES</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Trusted by Global Leaders</h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">See what our enterprise clients say about their experience</p>
+          <p className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-4">{settings.testimonial_badge}</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">{settings.testimonial_title}</h2>
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">{settings.testimonial_subtitle}</p>
         </header>
         {testimonials.length > 0 && (
           <Marquee className="[--duration:25s]" pauseOnHover>

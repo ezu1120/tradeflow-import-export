@@ -122,6 +122,82 @@ class SiteSettings(models.Model):
     blog_page_title = models.CharField(max_length=200, default='Our Blog')
     blog_page_subtitle = models.TextField(default='Stay updated with the latest insights, trends, and tips in global trade and logistics. Our blog covers everything from import/export regulations to industry news.')
 
+    # ── Trust Bar (Home) ──────────────────────────────────────────────────────
+    trust_bar_badge = models.TextField(default='TRUSTED BY INDUSTRY LEADERS')
+    trust_bar_title = models.TextField(default='Certified & Compliant Across All Major Trade Corridors')
+    trust_bar_statement = models.TextField(default='Our certifications ensure your cargo moves safely, legally, and efficiently through every checkpoint, customs office, and border crossing worldwide.')
+    cert1_name = models.TextField(default='ISO 9001:2015')
+    cert2_name = models.TextField(default='AEO Certified')
+    cert3_name = models.TextField(default='IATA Member')
+    cert4_name = models.TextField(default='C-TPAT Verified')
+    cert5_name = models.TextField(default='5-Star Rating')
+    cert6_name = models.TextField(default='FMC Licensed')
+
+    # ── Featured Services (Home) ──────────────────────────────────────────────
+    featured_services_badge = models.TextField(default='CORE SERVICES')
+    featured_services_title = models.TextField(default='Everything You Need for Global Trade Success')
+    featured_services_subtitle = models.TextField(default='From initial planning to final delivery, our comprehensive suite of services ensures your international trade operations run seamlessly.')
+    fs1_title = models.TextField(default='Global Logistics')
+    fs1_desc = models.TextField(default='End-to-end supply chain management with real-time tracking across air, sea, and land transportation networks.')
+    fs1_f1 = models.TextField(default='Multi-modal shipping')
+    fs1_f2 = models.TextField(default='Real-time tracking')
+    fs1_f3 = models.TextField(default='Global network')
+    fs2_title = models.TextField(default='Customs Clearance')
+    fs2_desc = models.TextField(default='Expert documentation and regulatory compliance services to ensure smooth passage through international borders.')
+    fs2_f1 = models.TextField(default='Expert documentation')
+    fs2_f2 = models.TextField(default='Regulatory compliance')
+    fs2_f3 = models.TextField(default='Fast processing')
+    fs3_title = models.TextField(default='Supply Chain Management')
+    fs3_desc = models.TextField(default='Strategic optimization and analytics to maximize efficiency, reduce costs, and improve delivery performance.')
+    fs3_f1 = models.TextField(default='Cost optimization')
+    fs3_f2 = models.TextField(default='Performance analytics')
+    fs3_f3 = models.TextField(default='Strategic planning')
+
+    # ── Home About Section ────────────────────────────────────────────────────
+    home_about_badge = models.TextField(default='Your Global Trade Partner')
+    home_about_section_title = models.TextField(default='For Modern Business')
+    home_about_inner_title = models.TextField(default='Turning Trade Complexity Into Your Competitive Edge')
+    home_about_highlight1 = models.TextField(default='ISO 9001 & 14001 Certified Operations')
+    home_about_highlight2 = models.TextField(default='AEO & C-TPAT Trusted Partner Status')
+    home_about_highlight3 = models.TextField(default='Real-time Shipment Tracking & Visibility')
+    home_about_highlight4 = models.TextField(default='Customs Clearance in 150+ Countries')
+    home_about_feat1_title = models.TextField(default='Compliance Excellence')
+    home_about_feat1_desc = models.TextField(default='Navigate regulations across 150+ countries with confidence')
+    home_about_feat2_title = models.TextField(default='Growth Focused')
+    home_about_feat2_desc = models.TextField(default='Scale operations without operational bottlenecks')
+    home_about_feat3_title = models.TextField(default='24/7 Support')
+    home_about_feat3_desc = models.TextField(default='Expert guidance from dedicated trade specialists')
+    home_about_cta_title = models.TextField(default='Ready to Expand Your Global Reach?')
+    home_about_cta_subtitle = models.TextField(default='Join hundreds of companies who trust us to handle their international trade operations.')
+    home_about_cta_btn = models.TextField(default='Get Started Today')
+
+    # ── Impact Stats Quote ────────────────────────────────────────────────────
+    impact_quote = models.TextField(default='"Every shipment represents a business dream, a market opportunity, and economic growth. We\'re proud to be the bridge that makes global commerce possible."')
+    impact_quote_author = models.TextField(default='— TradeFlow Leadership Team')
+
+    # ── Testimonials Section ──────────────────────────────────────────────────
+    testimonial_badge = models.TextField(default='CLIENT SUCCESS STORIES')
+    testimonial_title = models.TextField(default='Trusted by Global Leaders')
+    testimonial_subtitle = models.TextField(default='See what our enterprise clients say about their experience')
+
+    # ── Blog Page ─────────────────────────────────────────────────────────────
+    blog_hero_badge = models.TextField(default='Insights & Resources')
+    blog_hero_title = models.TextField(default='Trade Intelligence & Industry Insights')
+    blog_hero_subtitle = models.TextField(default='Expert perspectives on global trade, logistics innovation, and market trends')
+    blog_cta_title = models.TextField(default='Ready to Optimize Your Trade Operations?')
+    blog_cta_subtitle = models.TextField(default="Let our experts help you navigate global commerce with confidence")
+
+    # ── Contact Page Extra ────────────────────────────────────────────────────
+    contact_hours_weekday = models.TextField(default='9 AM - 6 PM')
+    contact_hours_sat = models.TextField(default='10 AM - 4 PM')
+    contact_hours_sun = models.TextField(default='Closed')
+    contact_stat1_title = models.TextField(default='50+ Countries')
+    contact_stat1_desc = models.TextField(default='Served worldwide')
+    contact_stat2_title = models.TextField(default='24/7 Support')
+    contact_stat2_desc = models.TextField(default='Always here to help')
+    contact_stat3_title = models.TextField(default='Expert Team')
+    contact_stat3_desc = models.TextField(default='10+ years experience')
+
     # ── Footer ────────────────────────────────────────────────────────────────
     footer_tagline = models.TextField(default='Your trusted partner in global logistics. Connecting businesses worldwide with seamless import-export solutions.')
 

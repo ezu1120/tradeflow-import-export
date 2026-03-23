@@ -116,18 +116,16 @@ export default function ContactPage() {
               </div>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-slate-300">
-                    Monday - Friday:
-                  </span>
-                  <span className="text-white">9 AM - 6 PM</span>
+                  <span className="text-slate-300">Monday - Friday:</span>
+                  <span className="text-white">{settings.contact_hours_weekday}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-300">Saturday:</span>
-                  <span className="text-white">10 AM - 4 PM</span>
+                  <span className="text-white">{settings.contact_hours_sat}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-300">Sunday:</span>
-                  <span className="text-white">Closed</span>
+                  <span className="text-white">{settings.contact_hours_sun}</span>
                 </div>
               </div>
             </div>
@@ -306,24 +304,18 @@ export default function ContactPage() {
             <div className="grid md:grid-cols-3 gap-4 mt-8">
               <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 text-center hover:border-[#D4AF37]/50 transition-colors">
                 <Globe className="w-8 h-8 text-[#D4AF37] mx-auto mb-2" />
-                <h3 className="font-semibold text-lg mb-1 text-white">50+ Countries</h3>
-                <p className="text-sm text-slate-300">
-                  Served worldwide
-                </p>
+                <h3 className="font-semibold text-lg mb-1 text-white">{settings.contact_stat1_title}</h3>
+                <p className="text-sm text-slate-300">{settings.contact_stat1_desc}</p>
               </div>
               <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 text-center hover:border-[#D4AF37]/50 transition-colors">
                 <Mail className="w-8 h-8 text-[#D4AF37] mx-auto mb-2" />
-                <h3 className="font-semibold text-lg mb-1 text-white">24/7 Support</h3>
-                <p className="text-sm text-slate-300">
-                  Always here to help
-                </p>
+                <h3 className="font-semibold text-lg mb-1 text-white">{settings.contact_stat2_title}</h3>
+                <p className="text-sm text-slate-300">{settings.contact_stat2_desc}</p>
               </div>
               <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 text-center hover:border-[#D4AF37]/50 transition-colors">
                 <Phone className="w-8 h-8 text-[#D4AF37] mx-auto mb-2" />
-                <h3 className="font-semibold text-lg mb-1 text-white">Expert Team</h3>
-                <p className="text-sm text-slate-300">
-                  10+ years experience
-                </p>
+                <h3 className="font-semibold text-lg mb-1 text-white">{settings.contact_stat3_title}</h3>
+                <p className="text-sm text-slate-300">{settings.contact_stat3_desc}</p>
               </div>
             </div>
           </div>

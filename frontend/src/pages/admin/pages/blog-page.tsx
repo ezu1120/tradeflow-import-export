@@ -224,6 +224,21 @@ function BlogHeaderSettings() {
           <Field label="Page Subtitle" name="blog_page_subtitle" value={settings.blog_page_subtitle} onChange={handleChange} textarea full />
         </div>
       </div>
+      <div className="bg-slate-900/40 border border-slate-700/50 rounded-xl p-4">
+        <p className="text-xs text-slate-500 uppercase tracking-wider mb-3">Blog Hero Section</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Field label="Hero Badge" name="blog_hero_badge" value={settings.blog_hero_badge} onChange={handleChange} />
+          <Field label="Hero Title" name="blog_hero_title" value={settings.blog_hero_title} onChange={handleChange} />
+          <Field label="Hero Subtitle" name="blog_hero_subtitle" value={settings.blog_hero_subtitle} onChange={handleChange} textarea full />
+        </div>
+      </div>
+      <div className="bg-slate-900/40 border border-slate-700/50 rounded-xl p-4">
+        <p className="text-xs text-slate-500 uppercase tracking-wider mb-3">Bottom CTA Section</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Field label="CTA Title" name="blog_cta_title" value={settings.blog_cta_title} onChange={handleChange} full />
+          <Field label="CTA Subtitle" name="blog_cta_subtitle" value={settings.blog_cta_subtitle} onChange={handleChange} textarea full />
+        </div>
+      </div>
     </div>
   );
 }

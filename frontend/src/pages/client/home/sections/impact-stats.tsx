@@ -143,12 +143,9 @@ export default function ImpactStats() {
           viewport={{ once: true }}
           className="text-center mt-20 pt-12 border-t border-white/10"
         >
-          <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
-            "Every shipment represents a business dream, a market opportunity, and economic growth. 
-            We're proud to be the bridge that makes global commerce possible."
-          </p>
+          <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">{settings.impact_quote}</p>
           <div className="mt-6">
-            <span className="text-[#D4AF37] font-semibold">— TradeFlow Leadership Team</span>
+            <span className="text-[#D4AF37] font-semibold">{settings.impact_quote_author}</span>
           </div>
         </motion.div>
       </div>

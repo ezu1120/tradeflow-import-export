@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { api } from "@/hooks/api";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 interface BlogPost {
   id: number;
@@ -39,6 +40,7 @@ export default function BlogPage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [featuredPost, setFeaturedPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
+  const { settings } = useSiteSettings();
 
   useEffect(() => {
     fetchBlogData();
@@ -123,19 +125,19 @@ export default function BlogPage() {
                 <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 backdrop-blur-sm border border-[#D4AF37]/30 rounded-full px-6 py-2 mb-6">
                   <BookOpen className="w-4 h-4 text-[#D4AF37]" />
                   <span className="text-sm font-semibold text-[#D4AF37] uppercase tracking-wider">
-                    Insights & Resources
+                    {settings.blog_hero_badge}
                   </span>
                 </div>
                 
                 <h1 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-                  Trade Intelligence
+                  {settings.blog_hero_title.split('&')[0]}
                   <span className="block bg-gradient-to-r from-[#D4AF37] to-amber-300 bg-clip-text text-transparent">
-                    & Industry Insights
+                    {settings.blog_hero_title.includes('&') ? '& ' + settings.blog_hero_title.split('&')[1] : ''}
                   </span>
                 </h1>
                 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-                  Expert perspectives on global trade, logistics innovation, and market trends
+                  {settings.blog_hero_subtitle}
                 </p>
 
                 {/* Search Bar */}
@@ -387,10 +389,10 @@ export default function BlogPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Ready to Optimize Your Trade Operations?
+                  {settings.blog_cta_title}
                 </h2>
                 <p className="text-lg text-slate-300 mb-8">
-                  Let our experts help you navigate global commerce with confidence
+                  {settings.blog_cta_subtitle}
                 </p>
                 <Link to="/contact">
                   <Button className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-slate-900 font-bold h-12 px-8">

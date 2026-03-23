@@ -31,6 +31,35 @@ export interface SiteSettings {
   about_cta_primary: string; about_cta_secondary: string;
   about_values_title: string; about_values_subtitle: string;
   about_journey_title: string; about_journey_subtitle: string;
+  // Trust Bar
+  trust_bar_badge: string; trust_bar_title: string; trust_bar_statement: string;
+  cert1_name: string; cert2_name: string; cert3_name: string;
+  cert4_name: string; cert5_name: string; cert6_name: string;
+  // Featured Services
+  featured_services_badge: string; featured_services_title: string; featured_services_subtitle: string;
+  fs1_title: string; fs1_desc: string; fs1_f1: string; fs1_f2: string; fs1_f3: string;
+  fs2_title: string; fs2_desc: string; fs2_f1: string; fs2_f2: string; fs2_f3: string;
+  fs3_title: string; fs3_desc: string; fs3_f1: string; fs3_f2: string; fs3_f3: string;
+  // Home About
+  home_about_badge: string; home_about_section_title: string; home_about_inner_title: string;
+  home_about_highlight1: string; home_about_highlight2: string;
+  home_about_highlight3: string; home_about_highlight4: string;
+  home_about_feat1_title: string; home_about_feat1_desc: string;
+  home_about_feat2_title: string; home_about_feat2_desc: string;
+  home_about_feat3_title: string; home_about_feat3_desc: string;
+  home_about_cta_title: string; home_about_cta_subtitle: string; home_about_cta_btn: string;
+  // Impact Stats
+  impact_quote: string; impact_quote_author: string;
+  // Testimonials
+  testimonial_badge: string; testimonial_title: string; testimonial_subtitle: string;
+  // Blog
+  blog_hero_badge: string; blog_hero_title: string; blog_hero_subtitle: string;
+  blog_cta_title: string; blog_cta_subtitle: string;
+  // Contact extras
+  contact_hours_weekday: string; contact_hours_sat: string; contact_hours_sun: string;
+  contact_stat1_title: string; contact_stat1_desc: string;
+  contact_stat2_title: string; contact_stat2_desc: string;
+  contact_stat3_title: string; contact_stat3_desc: string;
   services_title: string; services_subtitle: string;
   products_title: string; products_subtitle: string; products_badge: string;
   quote_title: string; quote_subtitle: string; quote_badge: string;
@@ -82,6 +111,42 @@ export const defaultSettings: SiteSettings = {
   about_cta_primary: "Schedule Consultation", about_cta_secondary: "View Services",
   about_values_title: "Our Core Values", about_values_subtitle: "The principles that guide everything we do",
   about_journey_title: "Our Journey", about_journey_subtitle: "Key milestones in our growth story",
+  trust_bar_badge: "TRUSTED BY INDUSTRY LEADERS",
+  trust_bar_title: "Certified & Compliant Across All Major Trade Corridors",
+  trust_bar_statement: "Our certifications ensure your cargo moves safely, legally, and efficiently through every checkpoint, customs office, and border crossing worldwide.",
+  cert1_name: "ISO 9001:2015", cert2_name: "AEO Certified", cert3_name: "IATA Member",
+  cert4_name: "C-TPAT Verified", cert5_name: "5-Star Rating", cert6_name: "FMC Licensed",
+  featured_services_badge: "CORE SERVICES",
+  featured_services_title: "Everything You Need for Global Trade Success",
+  featured_services_subtitle: "From initial planning to final delivery, our comprehensive suite of services ensures your international trade operations run seamlessly.",
+  fs1_title: "Global Logistics", fs1_desc: "End-to-end supply chain management with real-time tracking across air, sea, and land transportation networks.", fs1_f1: "Multi-modal shipping", fs1_f2: "Real-time tracking", fs1_f3: "Global network",
+  fs2_title: "Customs Clearance", fs2_desc: "Expert documentation and regulatory compliance services to ensure smooth passage through international borders.", fs2_f1: "Expert documentation", fs2_f2: "Regulatory compliance", fs2_f3: "Fast processing",
+  fs3_title: "Supply Chain Management", fs3_desc: "Strategic optimization and analytics to maximize efficiency, reduce costs, and improve delivery performance.", fs3_f1: "Cost optimization", fs3_f2: "Performance analytics", fs3_f3: "Strategic planning",
+  home_about_badge: "Your Global Trade Partner", home_about_section_title: "For Modern Business",
+  home_about_inner_title: "Turning Trade Complexity Into Your Competitive Edge",
+  home_about_highlight1: "ISO 9001 & 14001 Certified Operations",
+  home_about_highlight2: "AEO & C-TPAT Trusted Partner Status",
+  home_about_highlight3: "Real-time Shipment Tracking & Visibility",
+  home_about_highlight4: "Customs Clearance in 150+ Countries",
+  home_about_feat1_title: "Compliance Excellence", home_about_feat1_desc: "Navigate regulations across 150+ countries with confidence",
+  home_about_feat2_title: "Growth Focused", home_about_feat2_desc: "Scale operations without operational bottlenecks",
+  home_about_feat3_title: "24/7 Support", home_about_feat3_desc: "Expert guidance from dedicated trade specialists",
+  home_about_cta_title: "Ready to Expand Your Global Reach?",
+  home_about_cta_subtitle: "Join hundreds of companies who trust us to handle their international trade operations.",
+  home_about_cta_btn: "Get Started Today",
+  impact_quote: '"Every shipment represents a business dream, a market opportunity, and economic growth. We\'re proud to be the bridge that makes global commerce possible."',
+  impact_quote_author: "— TradeFlow Leadership Team",
+  testimonial_badge: "CLIENT SUCCESS STORIES", testimonial_title: "Trusted by Global Leaders",
+  testimonial_subtitle: "See what our enterprise clients say about their experience",
+  blog_hero_badge: "Insights & Resources",
+  blog_hero_title: "Trade Intelligence & Industry Insights",
+  blog_hero_subtitle: "Expert perspectives on global trade, logistics innovation, and market trends",
+  blog_cta_title: "Ready to Optimize Your Trade Operations?",
+  blog_cta_subtitle: "Let our experts help you navigate global commerce with confidence",
+  contact_hours_weekday: "9 AM - 6 PM", contact_hours_sat: "10 AM - 4 PM", contact_hours_sun: "Closed",
+  contact_stat1_title: "50+ Countries", contact_stat1_desc: "Served worldwide",
+  contact_stat2_title: "24/7 Support", contact_stat2_desc: "Always here to help",
+  contact_stat3_title: "Expert Team", contact_stat3_desc: "10+ years experience",
   services_title: "Our Services", services_subtitle: "Comprehensive import-export solutions designed to streamline your global trade operations",
   products_title: "Premium Import Solutions", products_subtitle: "Discover our curated selection of high-quality products from trusted global suppliers",
   products_badge: "PRODUCT CATALOG",

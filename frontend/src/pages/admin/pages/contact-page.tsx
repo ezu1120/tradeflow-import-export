@@ -39,12 +39,27 @@ export default function ContactAdminPage() {
         <Field label="Page Subtitle" name="contact_page_subtitle" value={settings.contact_page_subtitle} onChange={handleChange} textarea full />
       </SettingsBlock>
 
-      <SettingsBlock title="Contact Details (shown on contact page, footer, and header)">
+      <SettingsBlock title="Contact Details">
         <Field label="Contact Email" name="contact_email" value={settings.contact_email} onChange={handleChange} />
         <Field label="Contact Phone" name="contact_phone" value={settings.contact_phone} onChange={handleChange} />
         <Field label="Office Address" name="contact_address" value={settings.contact_address} onChange={handleChange} full />
         <Field label="Working Hours (weekdays)" name="working_hours" value={settings.working_hours} onChange={handleChange} />
         <Field label="Working Hours (Saturday)" name="working_hours_sat" value={settings.working_hours_sat} onChange={handleChange} />
+      </SettingsBlock>
+
+      <SettingsBlock title="Office Hours Display">
+        <Field label="Weekday Hours (e.g. 9 AM - 6 PM)" name="contact_hours_weekday" value={settings.contact_hours_weekday} onChange={handleChange} />
+        <Field label="Saturday Hours" name="contact_hours_sat" value={settings.contact_hours_sat} onChange={handleChange} />
+        <Field label="Sunday Hours (e.g. Closed)" name="contact_hours_sun" value={settings.contact_hours_sun} onChange={handleChange} />
+      </SettingsBlock>
+
+      <SettingsBlock title="Quick Stats (bottom of contact page)">
+        <Field label="Stat 1 Title" name="contact_stat1_title" value={settings.contact_stat1_title} onChange={handleChange} />
+        <Field label="Stat 1 Description" name="contact_stat1_desc" value={settings.contact_stat1_desc} onChange={handleChange} />
+        <Field label="Stat 2 Title" name="contact_stat2_title" value={settings.contact_stat2_title} onChange={handleChange} />
+        <Field label="Stat 2 Description" name="contact_stat2_desc" value={settings.contact_stat2_desc} onChange={handleChange} />
+        <Field label="Stat 3 Title" name="contact_stat3_title" value={settings.contact_stat3_title} onChange={handleChange} />
+        <Field label="Stat 3 Description" name="contact_stat3_desc" value={settings.contact_stat3_desc} onChange={handleChange} />
       </SettingsBlock>
 
       <SettingsBlock title="Quote Form Section (homepage)">
