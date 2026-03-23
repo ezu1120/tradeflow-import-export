@@ -22,6 +22,10 @@ export interface Settings {
   contact_email: string; contact_phone: string; contact_address: string;
   working_hours: string; working_hours_sat: string;
   footer_tagline: string;
+  about_page_badge: string; about_page_title: string; about_page_subtitle: string;
+  services_page_badge: string; services_page_title: string; services_page_subtitle: string;
+  contact_page_badge: string; contact_page_title: string; contact_page_subtitle: string;
+  blog_page_badge: string; blog_page_title: string; blog_page_subtitle: string;
   facebook_url: string; twitter_url: string; linkedin_url: string; instagram_url: string;
 }
 
@@ -53,6 +57,14 @@ export const defaultSettings: Settings = {
   contact_address: "Addis Ababa, Ethiopia", working_hours: "Mon-Fri, 9 AM - 6 PM",
   working_hours_sat: "10 AM - 4 PM",
   footer_tagline: "Your trusted partner in global logistics. Connecting businesses worldwide with seamless import-export solutions.",
+  about_page_badge: "Our Story", about_page_title: "About Us",
+  about_page_subtitle: "At TradeFlow, we specialize in connecting businesses across the globe. With years of experience in import and export, we pride ourselves on delivering reliable, efficient, and transparent services.",
+  services_page_badge: "Our Offerings", services_page_title: "Services & Products",
+  services_page_subtitle: "We provide comprehensive import and export solutions tailored to your business needs.",
+  contact_page_badge: "Contact Us", contact_page_title: "Get in Touch",
+  contact_page_subtitle: "We're here to help with your import and export needs. Reach out to our team and we'll get back to you within 24 hours.",
+  blog_page_badge: "Insights & Updates", blog_page_title: "Our Blog",
+  blog_page_subtitle: "Stay updated with the latest insights, trends, and tips in global trade and logistics.",
   facebook_url: "https://facebook.com", twitter_url: "https://twitter.com",
   linkedin_url: "https://linkedin.com", instagram_url: "https://instagram.com",
 };

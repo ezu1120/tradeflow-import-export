@@ -22,6 +22,10 @@ import SettingsServices from "@/pages/admin/settings/services";
 import SettingsQuote from "@/pages/admin/settings/quote";
 import SettingsContact from "@/pages/admin/settings/contact";
 import SettingsSocial from "@/pages/admin/settings/social";
+import SettingsPageAbout from "@/pages/admin/settings/page-about";
+import SettingsPageServices from "@/pages/admin/settings/page-services";
+import SettingsPageContact from "@/pages/admin/settings/page-contact";
+import SettingsPageBlog from "@/pages/admin/settings/page-blog";
 
 const Routes = () => {
   return useRoutes([
@@ -58,6 +62,10 @@ const Routes = () => {
         { path: "settings/quote", element: <SettingsQuote /> },
         { path: "settings/contact", element: <SettingsContact /> },
         { path: "settings/social", element: <SettingsSocial /> },
+        { path: "settings/page-about", element: <SettingsPageAbout /> },
+        { path: "settings/page-services", element: <SettingsPageServices /> },
+        { path: "settings/page-contact", element: <SettingsPageContact /> },
+        { path: "settings/page-blog", element: <SettingsPageBlog /> },
       ],
     },
   ]);

@@ -57,6 +57,23 @@ class SiteSettings(models.Model):
     working_hours = models.CharField(max_length=200, default='Mon-Fri, 9 AM - 6 PM')
     working_hours_sat = models.CharField(max_length=100, default='10 AM - 4 PM')
 
+    # ── Page Headers ─────────────────────────────────────────────────────────
+    about_page_badge = models.CharField(max_length=100, default='Our Story')
+    about_page_title = models.CharField(max_length=200, default='About Us')
+    about_page_subtitle = models.TextField(default='At TradeFlow, we specialize in connecting businesses across the globe. With years of experience in import and export, we pride ourselves on delivering reliable, efficient, and transparent services.')
+
+    services_page_badge = models.CharField(max_length=100, default='Our Offerings')
+    services_page_title = models.CharField(max_length=200, default='Services & Products')
+    services_page_subtitle = models.TextField(default='We provide comprehensive import and export solutions tailored to your business needs. From seamless international shipping to customs clearance, we ensure your goods reach their destination safely.')
+
+    contact_page_badge = models.CharField(max_length=100, default='Contact Us')
+    contact_page_title = models.CharField(max_length=200, default='Get in Touch')
+    contact_page_subtitle = models.TextField(default="We're here to help with your import and export needs. Reach out to our team and we'll get back to you within 24 hours.")
+
+    blog_page_badge = models.CharField(max_length=100, default='Insights & Updates')
+    blog_page_title = models.CharField(max_length=200, default='Our Blog')
+    blog_page_subtitle = models.TextField(default='Stay updated with the latest insights, trends, and tips in global trade and logistics. Our blog covers everything from import/export regulations to industry news.')
+
     # ── Footer ────────────────────────────────────────────────────────────────
     footer_tagline = models.TextField(default='Your trusted partner in global logistics. Connecting businesses worldwide with seamless import-export solutions.')
 

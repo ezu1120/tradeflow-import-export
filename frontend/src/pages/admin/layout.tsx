@@ -4,6 +4,7 @@ import {
   Globe, LayoutDashboard, FileText, MessageSquare, ClipboardList,
   LogOut, Menu, X, Layers, Building2, Star, BarChart2, Info,
   Briefcase, MessageCircle, Phone, Share2, ChevronDown, ChevronRight,
+  BookOpen, Users,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -24,6 +25,10 @@ const settingsNav = [
   { label: "Quote Form", href: "/1/settings/quote", icon: MessageCircle },
   { label: "Contact Info", href: "/1/settings/contact", icon: Phone },
   { label: "Social Media", href: "/1/settings/social", icon: Share2 },
+  { label: "About Page Header", href: "/1/settings/page-about", icon: Users },
+  { label: "Services Page Header", href: "/1/settings/page-services", icon: Briefcase },
+  { label: "Contact Page Header", href: "/1/settings/page-contact", icon: Phone },
+  { label: "Blog Page Header", href: "/1/settings/page-blog", icon: BookOpen },
 ];
 
 export default function AdminLayout() {
