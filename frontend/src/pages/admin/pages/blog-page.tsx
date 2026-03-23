@@ -372,10 +372,10 @@ function BlogPostsCRUD() {
 }
 
 export default function BlogAdminPage() {
-  const [tab, setTab] = useState<"posts" | "header" | "faqs" | "testimonials">("posts");
+  const [tab, setTab] = useState<"header" | "posts" | "faqs" | "testimonials">("header");
   const tabs = [
-    { key: "posts", label: "Blog Posts" },
     { key: "header", label: "Page Header" },
+    { key: "posts", label: "Blog Posts" },
     { key: "faqs", label: "FAQs" },
     { key: "testimonials", label: "Testimonials" },
   ] as const;

@@ -62,11 +62,6 @@ export default function ContactAdminPage() {
         <Field label="Stat 3 Description" name="contact_stat3_desc" value={settings.contact_stat3_desc} onChange={handleChange} />
       </SettingsBlock>
 
-      <SettingsBlock title="Quote Form Section (homepage)">
-        <Field label="Badge Text" name="quote_badge" value={settings.quote_badge} onChange={handleChange} />
-        <Field label="Title" name="quote_title" value={settings.quote_title} onChange={handleChange} />
-        <Field label="Subtitle" name="quote_subtitle" value={settings.quote_subtitle} onChange={handleChange} textarea full />
-      </SettingsBlock>
     </div>
   );
 }

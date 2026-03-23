@@ -34,7 +34,8 @@ export default function HomeAdminPage() {
         </button>
       </div>
 
-      <SettingsBlock title="Hero Section">
+      {/* 1. Hero */}
+      <SettingsBlock title="1 · Hero Section">
         <Field label="Badge Text" name="hero_badge_text" value={settings.hero_badge_text} onChange={handleChange} full />
         <Field label="Main Title" name="hero_title" value={settings.hero_title} onChange={handleChange} />
         <Field label="Title Highlight (gold text)" name="hero_title_highlight" value={settings.hero_title_highlight} onChange={handleChange} />
@@ -43,24 +44,8 @@ export default function HomeAdminPage() {
         <Field label="Secondary Button" name="hero_cta_secondary" value={settings.hero_cta_secondary} onChange={handleChange} />
       </SettingsBlock>
 
-      <SettingsBlock title="Stats & Numbers">
-        <Field label="Years Value (e.g. 15+)" name="stat_years" value={settings.stat_years} onChange={handleChange} />
-        <Field label="Years Label" name="stat_years_label" value={settings.stat_years_label} onChange={handleChange} />
-        <Field label="Countries Value (e.g. 50+)" name="stat_countries" value={settings.stat_countries} onChange={handleChange} />
-        <Field label="Countries Label" name="stat_countries_label" value={settings.stat_countries_label} onChange={handleChange} />
-        <Field label="Shipments Value (e.g. 10K+)" name="stat_shipments" value={settings.stat_shipments} onChange={handleChange} />
-        <Field label="Shipments Label" name="stat_shipments_label" value={settings.stat_shipments_label} onChange={handleChange} />
-        <Field label="Success Rate (e.g. 99.8%)" name="stat_success_rate" value={settings.stat_success_rate} onChange={handleChange} />
-        <Field label="Success Label" name="stat_success_label" value={settings.stat_success_label} onChange={handleChange} />
-      </SettingsBlock>
-
-      <SettingsBlock title="Quote Form Section">
-        <Field label="Badge Text" name="quote_badge" value={settings.quote_badge} onChange={handleChange} />
-        <Field label="Title" name="quote_title" value={settings.quote_title} onChange={handleChange} />
-        <Field label="Subtitle" name="quote_subtitle" value={settings.quote_subtitle} onChange={handleChange} textarea full />
-      </SettingsBlock>
-
-      <SettingsBlock title="Trust Bar Section">
+      {/* 2. Trust Bar */}
+      <SettingsBlock title="2 · Trust Bar Section">
         <Field label="Badge" name="trust_bar_badge" value={settings.trust_bar_badge} onChange={handleChange} full />
         <Field label="Title" name="trust_bar_title" value={settings.trust_bar_title} onChange={handleChange} full />
         <Field label="Statement" name="trust_bar_statement" value={settings.trust_bar_statement} onChange={handleChange} textarea full />
@@ -72,13 +57,14 @@ export default function HomeAdminPage() {
         <Field label="Cert 6" name="cert6_name" value={settings.cert6_name} onChange={handleChange} />
       </SettingsBlock>
 
-      <SettingsBlock title="Featured Services Section — Heading">
+      {/* 3. Featured Services */}
+      <SettingsBlock title="3 · Featured Services — Heading">
         <Field label="Badge" name="featured_services_badge" value={settings.featured_services_badge} onChange={handleChange} />
         <Field label="Title" name="featured_services_title" value={settings.featured_services_title} onChange={handleChange} />
         <Field label="Subtitle" name="featured_services_subtitle" value={settings.featured_services_subtitle} onChange={handleChange} textarea full />
       </SettingsBlock>
 
-      <SettingsBlock title="Featured Service 1">
+      <SettingsBlock title="3 · Featured Service 1">
         <Field label="Title" name="fs1_title" value={settings.fs1_title} onChange={handleChange} />
         <Field label="Description" name="fs1_desc" value={settings.fs1_desc} onChange={handleChange} textarea full />
         <Field label="Feature 1" name="fs1_f1" value={settings.fs1_f1} onChange={handleChange} />
@@ -86,7 +72,7 @@ export default function HomeAdminPage() {
         <Field label="Feature 3" name="fs1_f3" value={settings.fs1_f3} onChange={handleChange} />
       </SettingsBlock>
 
-      <SettingsBlock title="Featured Service 2">
+      <SettingsBlock title="3 · Featured Service 2">
         <Field label="Title" name="fs2_title" value={settings.fs2_title} onChange={handleChange} />
         <Field label="Description" name="fs2_desc" value={settings.fs2_desc} onChange={handleChange} textarea full />
         <Field label="Feature 1" name="fs2_f1" value={settings.fs2_f1} onChange={handleChange} />
@@ -94,7 +80,7 @@ export default function HomeAdminPage() {
         <Field label="Feature 3" name="fs2_f3" value={settings.fs2_f3} onChange={handleChange} />
       </SettingsBlock>
 
-      <SettingsBlock title="Featured Service 3">
+      <SettingsBlock title="3 · Featured Service 3">
         <Field label="Title" name="fs3_title" value={settings.fs3_title} onChange={handleChange} />
         <Field label="Description" name="fs3_desc" value={settings.fs3_desc} onChange={handleChange} textarea full />
         <Field label="Feature 1" name="fs3_f1" value={settings.fs3_f1} onChange={handleChange} />
@@ -102,7 +88,22 @@ export default function HomeAdminPage() {
         <Field label="Feature 3" name="fs3_f3" value={settings.fs3_f3} onChange={handleChange} />
       </SettingsBlock>
 
-      <SettingsBlock title="About Section (Home)">
+      {/* 4. Impact Stats */}
+      <SettingsBlock title="4 · Impact Stats & Numbers">
+        <Field label="Years Value (e.g. 15+)" name="stat_years" value={settings.stat_years} onChange={handleChange} />
+        <Field label="Years Label" name="stat_years_label" value={settings.stat_years_label} onChange={handleChange} />
+        <Field label="Countries Value (e.g. 50+)" name="stat_countries" value={settings.stat_countries} onChange={handleChange} />
+        <Field label="Countries Label" name="stat_countries_label" value={settings.stat_countries_label} onChange={handleChange} />
+        <Field label="Shipments Value (e.g. 10K+)" name="stat_shipments" value={settings.stat_shipments} onChange={handleChange} />
+        <Field label="Shipments Label" name="stat_shipments_label" value={settings.stat_shipments_label} onChange={handleChange} />
+        <Field label="Success Rate (e.g. 99.8%)" name="stat_success_rate" value={settings.stat_success_rate} onChange={handleChange} />
+        <Field label="Success Label" name="stat_success_label" value={settings.stat_success_label} onChange={handleChange} />
+        <Field label="Quote Text" name="impact_quote" value={settings.impact_quote} onChange={handleChange} textarea full />
+        <Field label="Quote Author" name="impact_quote_author" value={settings.impact_quote_author} onChange={handleChange} full />
+      </SettingsBlock>
+
+      {/* 5. About */}
+      <SettingsBlock title="5 · About Section">
         <Field label="Badge" name="home_about_badge" value={settings.home_about_badge} onChange={handleChange} />
         <Field label="Section Subtitle (gold text)" name="home_about_section_title" value={settings.home_about_section_title} onChange={handleChange} />
         <Field label="Inner Heading" name="home_about_inner_title" value={settings.home_about_inner_title} onChange={handleChange} full />
@@ -121,12 +122,22 @@ export default function HomeAdminPage() {
         <Field label="CTA Button" name="home_about_cta_btn" value={settings.home_about_cta_btn} onChange={handleChange} />
       </SettingsBlock>
 
-      <SettingsBlock title="Impact Stats Quote">
-        <Field label="Quote Text" name="impact_quote" value={settings.impact_quote} onChange={handleChange} textarea full />
-        <Field label="Quote Author" name="impact_quote_author" value={settings.impact_quote_author} onChange={handleChange} full />
+      {/* 7. Products section heading (products themselves managed in Services page) */}
+      <SettingsBlock title="7 · Products Section Heading">
+        <Field label="Badge" name="products_badge" value={settings.products_badge} onChange={handleChange} />
+        <Field label="Title" name="products_title" value={settings.products_title} onChange={handleChange} />
+        <Field label="Subtitle" name="products_subtitle" value={settings.products_subtitle} onChange={handleChange} textarea full />
       </SettingsBlock>
 
-      <SettingsBlock title="Testimonials Section">
+      {/* 9. Quote Form */}
+      <SettingsBlock title="9 · Quote Form Section">
+        <Field label="Badge Text" name="quote_badge" value={settings.quote_badge} onChange={handleChange} />
+        <Field label="Title" name="quote_title" value={settings.quote_title} onChange={handleChange} />
+        <Field label="Subtitle" name="quote_subtitle" value={settings.quote_subtitle} onChange={handleChange} textarea full />
+      </SettingsBlock>
+
+      {/* 10. Testimonials */}
+      <SettingsBlock title="10 · Testimonials Section">
         <Field label="Badge" name="testimonial_badge" value={settings.testimonial_badge} onChange={handleChange} />
         <Field label="Title" name="testimonial_title" value={settings.testimonial_title} onChange={handleChange} />
         <Field label="Subtitle" name="testimonial_subtitle" value={settings.testimonial_subtitle} onChange={handleChange} textarea full />
