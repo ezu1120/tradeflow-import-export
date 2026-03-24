@@ -30,6 +30,8 @@ class ContactMessage(models.Model):
     # Status and Tracking
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='new')
     admin_notes = models.TextField(blank=True)
+    reply_text = models.TextField(blank=True)
+    replied_at = models.DateTimeField(null=True, blank=True)
     
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)

@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { api } from "@/hooks/api";
+import { publicApi } from "@/hooks/api";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 interface Product { id: number; name: string; description: string; image: string; category: string; type: string; price: string; rating: number; reviews: number }
@@ -14,8 +14,8 @@ export default function Products() {
   const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
-    api.get("/api/content/products/?category=import")
-      .then(r => setProducts((r.data.results || r.data).slice(0, 3)))
+    publicApi.get("/api/content/products/")
+      .then(r => setProducts((r.data.results || r.data).slice(0, 6)))
       .catch(() => {})
   }, [])
 

@@ -3,6 +3,9 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
+from django.core.mail import send_mail
+from django.conf import settings
+from django.utils import timezone
 from .models import ContactMessage, Newsletter
 from .serializers import (
     ContactMessageSerializer,
@@ -36,6 +39,42 @@ class ContactMessageViewSet(viewsets.ModelViewSet):
             'message': 'Thank you for contacting us! We will get back to you soon.',
             'data': serializer.data
         }, status=status.HTTP_201_CREATED)
+
+    @action(detail=True, methods=['post'], url_path='reply')
+    def reply(self, request, pk=None):
+        contact = self.get_object()
+        reply_text = request.data.get('reply_text', '').strip()
+
+        if not reply_text:
+            return Response({'error': 'Reply message cannot be empty.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Build email body
+        body = (
+            f"Dear {contact.name},\n\n"
+            f"{reply_text}\n\n"
+            f"---\n"
+            f"This is a reply to your message: \"{contact.message[:200]}{'...' if len(contact.message) > 200 else ''}\"\n\n"
+            f"TradeFlow Team"
+        )
+
+        try:
+            send_mail(
+                subject=f"Re: {contact.get_subject_display()} — TradeFlow",
+                message=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[contact.email],
+                fail_silently=False,
+            )
+        except Exception as e:
+            return Response({'error': f'Failed to send email: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Persist reply and mark as replied
+        contact.reply_text = reply_text
+        contact.replied_at = timezone.now()
+        contact.status = 'replied'
+        contact.save(update_fields=['reply_text', 'replied_at', 'status'])
+
+        return Response({'message': 'Reply sent successfully.'}, status=status.HTTP_200_OK)
 
 
 class NewsletterViewSet(viewsets.ModelViewSet):

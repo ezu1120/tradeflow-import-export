@@ -12,9 +12,10 @@ class ContactMessageSerializer(serializers.ModelSerializer):
             'id', 'name', 'email', 'phone', 'company',
             'subject', 'subject_display', 'message',
             'status', 'status_display', 'admin_notes',
+            'reply_text', 'replied_at',
             'created_at', 'updated_at'
         ]
-        read_only_fields = ['status', 'admin_notes']
+        read_only_fields = ['status', 'admin_notes', 'reply_text', 'replied_at']
 
 
 class ContactMessageCreateSerializer(serializers.ModelSerializer):

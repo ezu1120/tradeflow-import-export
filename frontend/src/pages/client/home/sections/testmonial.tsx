@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Marquee from "@/components/ui/marquee";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { api } from "@/hooks/api";
+import { publicApi } from "@/hooks/api";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 interface Testimonial { id: number; name: string; company: string; role: string; feedback: string; rating: number }
@@ -11,7 +11,7 @@ const TestimonialMarquee = () => {
   const { settings } = useSiteSettings();
 
   useEffect(() => {
-    api.get("/api/content/testimonials/")
+    publicApi.get("/api/content/testimonials/")
       .then(r => setTestimonials(r.data.results || r.data))
       .catch(() => {})
   }, [])
