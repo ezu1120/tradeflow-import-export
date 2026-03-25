@@ -11,13 +11,6 @@ interface Product {
   category: string; type: string; price: string; rating: number; reviews: number;
 }
 
-const highlights = [
-  { label: "Fast Shipping",     description: "Delivery in 7-14 days" },
-  { label: "Secure Payments",   description: "SSL encrypted transactions" },
-  { label: "Quality Verified",  description: "All products inspected" },
-  { label: "24/7 Support",      description: "Always here to help" },
-];
-
 function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="pt-0 overflow-hidden border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm hover:border-[#D4AF37]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#D4AF37]/10 cursor-pointer group">
@@ -138,14 +131,10 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        {/* Highlights */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-          {highlights.map((item, idx) => (
-            <div key={idx} className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50 text-center hover:border-[#D4AF37]/50 transition-colors">
-              <p className="font-semibold text-white text-sm">{item.label}</p>
-              <p className="text-xs text-slate-300">{item.description}</p>
-            </div>
-          ))}
+        {/* Section title */}
+        <div className="mb-10">
+          <h2 className="text-3xl font-bold text-white">Our <span className="text-[#D4AF37]">Products</span></h2>
+          <p className="text-slate-400 mt-2 text-sm">Browse our verified import and export catalogue</p>
         </div>
 
         {/* Products Tabs */}
