@@ -1,9 +1,10 @@
 import { useState, useMemo, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, ChevronRight } from "lucide-react";
+import { Search, ChevronRight, ShieldCheck, Globe2, Truck, HeadphonesIcon, BadgeCheck, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 import { publicApi } from "@/hooks/api";
+import { Link } from "react-router-dom";
 
 interface Product {
   id: number; name: string; description: string; image: string;
@@ -96,6 +97,47 @@ export default function ProductsPage() {
       </div>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Stats bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {[
+            { value: "500+", label: "Products Available" },
+            { value: "50+",  label: "Countries Served" },
+            { value: "98%",  label: "Client Satisfaction" },
+            { value: "10+",  label: "Years Experience" },
+          ].map((s, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+              className="text-center p-5 rounded-xl bg-gradient-to-br from-[#D4AF37]/10 to-transparent border border-[#D4AF37]/20">
+              <p className="text-3xl font-black text-[#D4AF37]">{s.value}</p>
+              <p className="text-sm text-slate-300 mt-1">{s.label}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Why trade with us */}
+        <div className="mb-12 rounded-2xl bg-slate-800/40 border border-slate-700/50 p-8">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">Why Trade With <span className="text-[#D4AF37]">Us</span></h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { icon: BadgeCheck,      title: "Quality Guaranteed",   desc: "Every product is inspected and certified before shipment." },
+              { icon: Globe2,          title: "Global Reach",         desc: "We operate in 50+ countries with established trade routes." },
+              { icon: Truck,           title: "Fast Delivery",        desc: "Optimized logistics ensure delivery in 7–14 business days." },
+              { icon: ShieldCheck,     title: "Secure Transactions",  desc: "SSL-encrypted payments and full insurance coverage." },
+              { icon: TrendingUp,      title: "Competitive Pricing",  desc: "Direct sourcing means better prices for your business." },
+              { icon: HeadphonesIcon,  title: "Dedicated Support",    desc: "Our trade experts are available 24/7 to assist you." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="flex gap-4 p-4 rounded-xl hover:bg-slate-700/30 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-5 h-5 text-[#D4AF37]" />
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">{title}</p>
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Highlights */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
           {highlights.map((item, idx) => (
@@ -150,6 +192,18 @@ export default function ProductsPage() {
             </TabsContent>
           ))}
         </Tabs>
+
+        {/* CTA */}
+        <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/10 to-transparent border border-[#D4AF37]/30 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-2">Ready to start trading?</h3>
+            <p className="text-slate-300 text-sm">Get in touch with our team for custom quotes and bulk orders.</p>
+          </div>
+          <Link to="/contact"
+            className="flex-shrink-0 bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-[#101828] font-bold px-8 py-3 rounded-xl transition-colors text-sm">
+            Get a Quote
+          </Link>
+        </div>
       </main>
     </div>
   );

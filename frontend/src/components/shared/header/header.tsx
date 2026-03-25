@@ -12,11 +12,11 @@ export default function Header() {
   const { settings } = useSiteSettings();
 
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+    { label: "Home",     href: "/" },
+    { label: "About",    href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Blog", href: "/blog" },
     { label: "Products", href: "/products" },
+    { label: "Blog",     href: "/blog" },
   ];
 
   return (
