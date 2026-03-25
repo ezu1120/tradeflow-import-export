@@ -26,11 +26,11 @@ export const useSignInWithEmailMutation = () => {
         );
         navigate("/account");
 
-        return res.data;
+        return (res as any).data;
       } else {
         handleTanstackError({
           error: null,
-          options: { customMessage: res.error?.message },
+          options: { customMessage: (res as any).error?.message },
         });
       }
     },

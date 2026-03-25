@@ -121,7 +121,7 @@ export default function AdminProducts() {
     e.preventDefault();
     const payload = { ...form };
     if (allowedCategory) payload.category = allowedCategory;
-    if (staffOnly) delete payload.is_published;
+    if (staffOnly) delete (payload as any).is_published;
     try {
       if (editing) { await api.patch(`/api/content/products/${editing.id}/`, payload); toast.success("Updated"); }
       else { await api.post("/api/content/products/", payload); toast.success(staffOnly ? "Submitted for manager review" : "Created"); }
@@ -228,7 +228,7 @@ export default function AdminProducts() {
                   {allowedCategory ? (
                     <div className={inp + " opacity-60 cursor-not-allowed capitalize"}>{allowedCategory}</div>
                   ) : (
-                    <select value={form.category} onChange={e => setForm({ ...form, category: e.target.value })} className={inp}>
+                    <select value={form.category} onChange={e => setForm({ ...form, category: e.target.value as "import" | "export" })} className={inp}>
                       <option value="import">Import</option>
                       <option value="export">Export</option>
                     </select>

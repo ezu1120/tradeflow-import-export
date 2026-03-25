@@ -55,7 +55,13 @@ def admin_login(request):
     username = request.data.get('username')
     password = request.data.get('password')
 
+    import logging
+    logger = logging.getLogger(__name__)
+    print(f">>> LOGIN ATTEMPT: username={username!r} password_len={len(password or '')}", flush=True)
+    logger.warning(f"LOGIN ATTEMPT: username={username!r} password_len={len(password or '')}")
+
     user = authenticate(username=username, password=password)
+    logger.warning(f"AUTH RESULT: user={user}")
 
     if user and user.is_active and (user.is_staff or user.is_superuser):
         token, _ = Token.objects.get_or_create(user=user)

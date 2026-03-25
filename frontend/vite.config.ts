@@ -18,4 +18,22 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    allowedHosts: [
+      "all",
+      ".ngrok-free.app",
+      ".ngrok-free.dev",
+      ".ngrok.io",
+      "prehostile-delighted-bella.ngrok-free.dev",
+    ],
+    headers: {
+      "ngrok-skip-browser-warning": "true",
+    },
+    proxy: {
+      "/api": {
+        target: "http://localhost:8000",
+        changeOrigin: true,
+      },
+    },
+  },
 });

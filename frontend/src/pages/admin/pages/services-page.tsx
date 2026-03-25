@@ -70,7 +70,7 @@ function ServicesCRUD() {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState<any>(null);
-  const emptyForm = { title: "", description: "", icon: "Globe", features: [], color: "from-blue-500 to-cyan-500", order: 0, is_active: true };
+  const emptyForm = { title: "", description: "", icon: "Globe", features: [] as string[], color: "from-blue-500 to-cyan-500", order: 0, is_active: true };
   const [form, setForm] = useState(emptyForm);
 
   const fetch_ = async () => {
@@ -174,7 +174,7 @@ function ProductsCRUD() {
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState<any>(null);
   const [viewing, setViewing] = useState<any>(null);
-  const emptyForm = { name: "", description: "", image: "", category: defaultCategory, type: "", price: "", rating: 4.5, reviews: 0, order: 0, is_active: true };
+  const emptyForm: { name: string; description: string; image: string; category: "import" | "export"; type: string; price: string; rating: number; reviews: number; order: number; is_active: boolean } = { name: "", description: "", image: "", category: defaultCategory as "import" | "export", type: "", price: "", rating: 4.5, reviews: 0, order: 0, is_active: true };
   const [form, setForm] = useState(emptyForm);
 
   const fetch_ = async () => {
@@ -194,7 +194,7 @@ function ProductsCRUD() {
     e.preventDefault();
     const payload = { ...form };
     if (allowedCategory) payload.category = allowedCategory;
-    if (staffOnly) delete payload.is_published;
+    if (staffOnly) delete (payload as any).is_published;
     try {
       if (editing) { await api.patch(`/api/content/products/${editing.id}/`, payload); toast.success("Updated"); }
       else { await api.post("/api/content/products/", payload); toast.success(staffOnly ? "Submitted for manager review" : "Created"); }
@@ -278,7 +278,7 @@ function ProductsCRUD() {
                   {allowedCategory ? (
                     <div className={inp + " opacity-60 cursor-not-allowed capitalize"}>{allowedCategory}</div>
                   ) : (
-                    <select value={form.category} onChange={e => setForm({ ...form, category: e.target.value })} className={inp}>
+                    <select value={form.category} onChange={e => setForm({ ...form, category: e.target.value as "import" | "export" })} className={inp}>
                       <option value="import">Import</option>
                       <option value="export">Export</option>
                     </select>

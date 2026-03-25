@@ -18,11 +18,8 @@ DEBUG = config('DEBUG', default='False') == 'True'
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
-# Add Railway and Vercel domains
-if os.environ.get('RAILWAY_ENVIRONMENT'):
-    ALLOWED_HOSTS.append('.railway.app')
-if os.environ.get('VERCEL'):
-    ALLOWED_HOSTS.append('.vercel.app')
+# Allow all ngrok tunnels and any host in dev
+ALLOWED_HOSTS += ['*']
 
 
 # Application definition
@@ -183,6 +180,8 @@ CORS_ALLOWED_ORIGINS += [
 _frontend_url = config('FRONTEND_URL', default='')
 if _frontend_url:
     CORS_ALLOWED_ORIGINS.append(_frontend_url)
+
+CORS_ALLOW_ALL_ORIGINS = True  # allow ngrok and any tunnel URLs
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
