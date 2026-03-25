@@ -1,0 +1,1111 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$SeEDpDTZ3lEe6KwvQi43Wl$FstOYv2sXhPpe706UEZzuNpJ6yMxZ+tVI38Awt282Y4=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-22T14:38:10.232Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$M7Tic6tgc8oCsHskRmwt5b$Md8PDiJf+Wexx0+R7raaLk/4PQkA1XkOPZ6tyzi6FEE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "import_staff",
+    "first_name": "import ",
+    "last_name": "staff",
+    "email": "importstaff@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-24T03:20:29.935Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$khwDfCxsNoYPGn5xU9Mo3g$fVd8L8wfmeoSrQSOqkshC4AmLxkw6vutbULfQo7Nm9g=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "import_manager",
+    "first_name": "import ",
+    "last_name": "manager",
+    "email": "importmanager@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-24T03:43:33.848Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$E2yPS5ISJnUuipBTBBRmCb$UUmIXVDx+ILeDT/ryYpobvZyxwh31mTBI88EkRH4EIk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "export_staff",
+    "first_name": "export",
+    "last_name": "staff",
+    "email": "exportstaff@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-24T03:54:37.131Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$XYKercXdijqtfSrIki3bMZ$H1kl4cBkHGqKallQbSLFEXeUi76LLqK5mwkZ/rNFwmI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "export_manager",
+    "first_name": "export",
+    "last_name": "manager",
+    "email": "exportmanager@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-24T03:55:47.039Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "2ba2fec29d1bcf39a0c03d2a0468fcb3946e54f2",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "created": "2026-03-24T03:42:27.462Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "32d59baa421317169c0678755ff77214242f154a",
+  "fields": {
+    "user": [
+      "import_staff"
+    ],
+    "created": "2026-03-24T03:41:02.116Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "b5a6649d49530e9dd96fe5a8a0d07b3e961c202a",
+  "fields": {
+    "user": [
+      "import_manager"
+    ],
+    "created": "2026-03-24T03:43:53.438Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "c3569fd32ea618ad2cae8f450a6e2ac31f95fd27",
+  "fields": {
+    "user": [
+      "export_manager"
+    ],
+    "created": "2026-03-24T03:58:40.960Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "f3285ce99f46eeb8ed9bba69bb6eaf0f17715753",
+  "fields": {
+    "user": [
+      "export_staff"
+    ],
+    "created": "2026-03-24T03:57:07.469Z"
+  }
+},
+{
+  "model": "blog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Regulations",
+    "slug": "regulations",
+    "description": "Trade regulations and compliance",
+    "created_at": "2026-03-22T14:38:18.983Z"
+  }
+},
+{
+  "model": "blog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Logistics",
+    "slug": "logistics",
+    "description": "Logistics and shipping solutions",
+    "created_at": "2026-03-22T14:38:19.013Z"
+  }
+},
+{
+  "model": "blog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Technology",
+    "slug": "technology",
+    "description": "Technology innovations in trade",
+    "created_at": "2026-03-22T14:38:19.026Z"
+  }
+},
+{
+  "model": "blog.category",
+  "pk": 4,
+  "fields": {
+    "name": "Market Analysis",
+    "slug": "market-analysis",
+    "description": "Global market trends and analysis",
+    "created_at": "2026-03-22T14:38:19.041Z"
+  }
+},
+{
+  "model": "blog.category",
+  "pk": 5,
+  "fields": {
+    "name": "Sustainability",
+    "slug": "sustainability",
+    "description": "Sustainable trade practices",
+    "created_at": "2026-03-22T14:38:19.053Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 1,
+  "fields": {
+    "title": "Navigating Global Trade Regulations in 2025",
+    "slug": "navigating-global-trade-regulations-in-2025",
+    "excerpt": "Understanding the latest changes in international trade policies and how they impact your business operations across different markets.",
+    "content": "<h2>Introduction</h2>\n<p>The landscape of global trade regulations continues to evolve rapidly in 2025. Businesses engaged in international commerce must stay informed about these changes to maintain compliance and competitive advantage.</p>\n\n<h2>Key Regulatory Changes</h2>\n<p>Several major economies have introduced new trade policies this year, affecting customs procedures, tariff structures, and documentation requirements. Understanding these changes is crucial for smooth operations.</p>\n\n<h3>Digital Documentation</h3>\n<p>Many countries are now requiring digital submission of trade documents, streamlining the customs clearance process while enhancing security and traceability.</p>\n\n<h3>Environmental Standards</h3>\n<p>New environmental regulations are being implemented globally, requiring businesses to demonstrate sustainable practices in their supply chains.</p>\n\n<h2>Best Practices for Compliance</h2>\n<ul>\n<li>Stay updated with regulatory changes in your target markets</li>\n<li>Invest in compliance management systems</li>\n<li>Work with experienced customs brokers</li>\n<li>Maintain accurate documentation</li>\n<li>Conduct regular compliance audits</li>\n</ul>\n\n<h2>Conclusion</h2>\n<p>Navigating global trade regulations requires vigilance, expertise, and the right partnerships. By staying informed and proactive, businesses can turn regulatory compliance into a competitive advantage.</p>",
+    "image": "/global-trade-shipping-containers.jpg",
+    "author": "Sarah Chen",
+    "category": 1,
+    "read_time": "8 min read",
+    "is_featured": true,
+    "is_published": true,
+    "views_count": 0,
+    "created_at": "2026-03-22T14:38:19.062Z",
+    "updated_at": "2026-03-22T14:38:19.062Z",
+    "published_date": "2026-03-22T14:38:19.057Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 2,
+  "fields": {
+    "title": "Logistics Cost Optimization Strategies",
+    "slug": "logistics-cost-optimization-strategies",
+    "excerpt": "Learn proven methods to reduce shipping costs without compromising delivery times or service quality.",
+    "content": "<h2>Understanding Logistics Costs</h2>\n<p>Logistics costs can account for a significant portion of your overall business expenses. Optimizing these costs while maintaining service quality is essential for profitability.</p>\n\n<h2>Key Optimization Strategies</h2>\n<h3>1. Route Optimization</h3>\n<p>Implementing advanced route planning software can reduce fuel costs and delivery times significantly.</p>\n\n<h3>2. Consolidation</h3>\n<p>Combining shipments when possible reduces per-unit shipping costs and improves efficiency.</p>\n\n<h3>3. Carrier Negotiation</h3>\n<p>Building strong relationships with carriers and negotiating volume discounts can lead to substantial savings.</p>\n\n<h2>Technology Solutions</h2>\n<p>Modern logistics management systems provide real-time visibility and analytics, enabling data-driven decision-making for cost optimization.</p>",
+    "image": "/logistics-warehouse-management.jpg",
+    "author": "Michael Rodriguez",
+    "category": 2,
+    "read_time": "6 min read",
+    "is_featured": false,
+    "is_published": true,
+    "views_count": 0,
+    "created_at": "2026-03-22T14:38:19.072Z",
+    "updated_at": "2026-03-22T14:38:19.072Z",
+    "published_date": "2026-03-22T14:38:19.067Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 3,
+  "fields": {
+    "title": "Digital Transformation in Supply Chain",
+    "slug": "digital-transformation-in-supply-chain",
+    "excerpt": "How AI and automation are revolutionizing import/export operations and creating new efficiencies.",
+    "content": "<h2>The Digital Revolution</h2>\n<p>Artificial intelligence and automation are transforming how businesses manage their supply chains, from predictive analytics to automated customs clearance.</p>\n\n<h2>AI Applications</h2>\n<h3>Predictive Analytics</h3>\n<p>AI-powered systems can forecast demand, optimize inventory levels, and predict potential disruptions before they occur.</p>\n\n<h3>Automated Documentation</h3>\n<p>Machine learning algorithms can automatically generate and verify trade documents, reducing errors and processing time.</p>\n\n<h2>Benefits of Digital Transformation</h2>\n<ul>\n<li>Increased efficiency and speed</li>\n<li>Reduced human error</li>\n<li>Better visibility and tracking</li>\n<li>Cost savings</li>\n<li>Improved customer satisfaction</li>\n</ul>",
+    "image": "/supply-chain-technology.png",
+    "author": "Emma Watson",
+    "category": 3,
+    "read_time": "7 min read",
+    "is_featured": true,
+    "is_published": true,
+    "views_count": 0,
+    "created_at": "2026-03-22T14:38:19.090Z",
+    "updated_at": "2026-03-22T14:38:19.090Z",
+    "published_date": "2026-03-22T14:38:19.079Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 4,
+  "fields": {
+    "title": "Asia-Pacific Trade Growth Opportunities",
+    "slug": "asia-pacific-trade-growth-opportunities",
+    "excerpt": "Exploring emerging opportunities in the fastest-growing trade corridors and how to capitalize on them.",
+    "content": "<h2>The Asia-Pacific Advantage</h2>\n<p>The Asia-Pacific region continues to be the fastest-growing trade corridor globally, offering immense opportunities for businesses willing to navigate its complexities.</p>\n\n<h2>Key Markets</h2>\n<h3>China</h3>\n<p>Despite challenges, China remains a crucial market with its massive consumer base and manufacturing capabilities.</p>\n\n<h3>Southeast Asia</h3>\n<p>Countries like Vietnam, Thailand, and Indonesia are emerging as manufacturing hubs and growing consumer markets.</p>\n\n<h2>Success Strategies</h2>\n<p>Understanding local regulations, building strong partnerships, and adapting to cultural differences are key to success in Asia-Pacific markets.</p>",
+    "image": "/asia-trade-ports-business.jpg",
+    "author": "David Park",
+    "category": 4,
+    "read_time": "9 min read",
+    "is_featured": false,
+    "is_published": true,
+    "views_count": 0,
+    "created_at": "2026-03-22T14:38:19.099Z",
+    "updated_at": "2026-03-22T14:38:19.099Z",
+    "published_date": "2026-03-22T14:38:19.098Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 5,
+  "fields": {
+    "title": "Sustainable Export Practices",
+    "slug": "sustainable-export-practices",
+    "excerpt": "Meeting environmental standards while maintaining competitive shipping costs and operational efficiency.",
+    "content": "<h2>The Sustainability Imperative</h2>\n<p>Environmental sustainability is no longer optional in international trade. Businesses must adopt green practices to meet regulations and customer expectations.</p>\n\n<h2>Green Logistics Solutions</h2>\n<h3>Carbon-Neutral Shipping</h3>\n<p>Many carriers now offer carbon offset programs and are investing in cleaner fuel alternatives.</p>\n\n<h3>Sustainable Packaging</h3>\n<p>Eco-friendly packaging materials reduce environmental impact while often lowering costs.</p>\n\n<h2>Benefits Beyond Compliance</h2>\n<p>Sustainable practices can enhance brand reputation, attract environmentally conscious customers, and often lead to cost savings through efficiency improvements.</p>",
+    "image": "/green-logistics-sustainability.jpg",
+    "author": "James Miller",
+    "category": 5,
+    "read_time": "6 min read",
+    "is_featured": false,
+    "is_published": true,
+    "views_count": 0,
+    "created_at": "2026-03-22T14:38:19.107Z",
+    "updated_at": "2026-03-22T14:38:19.107Z",
+    "published_date": "2026-03-22T14:38:19.106Z"
+  }
+},
+{
+  "model": "quotes.quoterequest",
+  "pk": 1,
+  "fields": {
+    "email": "wive@mailinator.com",
+    "phone": "+1 (162) 325-9458",
+    "company_name": "Byrd Hill Associates",
+    "origin_country": "Quo odit dolores rep",
+    "destination_country": "Recusandae Ab est n",
+    "cargo_type": "perishable",
+    "weight": "53.00",
+    "additional_info": "Impedit obcaecati v",
+    "status": "pending",
+    "quote_amount": null,
+    "quote_currency": "USD",
+    "admin_notes": "",
+    "created_at": "2026-03-22T19:01:35.236Z",
+    "updated_at": "2026-03-22T19:01:35.236Z"
+  }
+},
+{
+  "model": "contacts.contactmessage",
+  "pk": 1,
+  "fields": {
+    "name": "Bell Gutierrez",
+    "email": "xytafere@mailinator.com",
+    "phone": "+1 (381) 204-6557",
+    "company": "Rosa Neal Co",
+    "subject": "partnership",
+    "message": "Obcaecati quisquam v",
+    "status": "new",
+    "admin_notes": "",
+    "reply_text": "",
+    "replied_at": null,
+    "created_at": "2026-03-22T19:00:59.308Z",
+    "updated_at": "2026-03-24T08:34:52.579Z"
+  }
+},
+{
+  "model": "contacts.contactmessage",
+  "pk": 2,
+  "fields": {
+    "name": "Howard Lopez",
+    "email": "rimylopu@mailinator.com",
+    "phone": "+1 (581) 145-1939",
+    "company": "Oneal and Hatfield Inc",
+    "subject": "quote",
+    "message": "Rem aut sint cum im",
+    "status": "new",
+    "admin_notes": "",
+    "reply_text": "",
+    "replied_at": null,
+    "created_at": "2026-03-23T11:54:02.925Z",
+    "updated_at": "2026-03-24T08:34:49.866Z"
+  }
+},
+{
+  "model": "contacts.contactmessage",
+  "pk": 3,
+  "fields": {
+    "name": "Cody Morris",
+    "email": "lalegaezedin@gmail.com",
+    "phone": "+1 (996) 286-3506",
+    "company": "Mueller Logan Inc",
+    "subject": "complaint",
+    "message": "Fugiat deserunt itaq",
+    "status": "new",
+    "admin_notes": "",
+    "reply_text": "",
+    "replied_at": null,
+    "created_at": "2026-03-24T08:49:51.358Z",
+    "updated_at": "2026-03-24T08:49:51.358Z"
+  }
+},
+{
+  "model": "settings_manager.sitesettings",
+  "pk": 1,
+  "fields": {
+    "company_name": "TradeFlow",
+    "company_tagline": "Global Trade, Simplified.",
+    "company_description": "Expert  solutions connecting your business to the world's most lucrative markets.",
+    "company_email": "hello@tradehub.com",
+    "company_phone": "+251 991 001 124",
+    "company_address": "Addis Ababa, Ethiopia",
+    "hero_badge_text": "TRUSTED BY 5,000+ GLOBAL ENTERPRISES",
+    "hero_title": "Global Trade ,",
+    "hero_title_highlight": "Simplified.",
+    "hero_subtitle": "Expert Import-Export solutions connecting your business to the world's most lucrative markets.",
+    "hero_cta_primary": "Request a Quote",
+    "hero_cta_secondary": "Our Products",
+    "stat_years": "35+",
+    "stat_years_label": "Years Experience",
+    "stat_countries": "50+",
+    "stat_countries_label": "Countries Served",
+    "stat_shipments": "10K+",
+    "stat_shipments_label": "Shipments Delivered",
+    "stat_success_rate": "99.8%",
+    "stat_success_label": "Success Rate",
+    "about_title": "Trusted Partner in Global Commerce",
+    "about_description": "For over two decades, we've been eliminating the complexity of international trade, helping businesses expand globally with confidence.",
+    "about_story": "TradeFlow was founded with a simple mission: make international trade accessible to businesses of all sizes.",
+    "about_commitment": "We're committed to transparency, reliability, and building long-term partnerships that drive mutual success.",
+    "about_founded_text": "Trusted by Fortune 500 Companies",
+    "about_founded_sub": "Delivering excellence in global trade since 2004",
+    "about_story_image": "/global-trade-shipping-containers.jpg",
+    "value1_title": "Customer First",
+    "value1_desc": "Your success is our priority. We tailor solutions to meet your unique needs.",
+    "value2_title": "Integrity",
+    "value2_desc": "Transparent operations and ethical practices in every transaction.",
+    "value3_title": "Innovation",
+    "value3_desc": "Leveraging technology to streamline global trade operations.",
+    "value4_title": "Excellence",
+    "value4_desc": "Committed to delivering exceptional service quality every time.",
+    "milestone1_year": "2004",
+    "milestone1_title": "Company Founded",
+    "milestone1_desc": "Started with a vision to simplify global trade",
+    "milestone2_year": "2010",
+    "milestone2_title": "Global Expansion",
+    "milestone2_desc": "Extended services to 50+ countries",
+    "milestone3_year": "2015",
+    "milestone3_title": "Technology Integration",
+    "milestone3_desc": "Launched real-time tracking platform",
+    "milestone4_year": "2020",
+    "milestone4_title": "Industry Leader",
+    "milestone4_desc": "Recognized as top logistics provider",
+    "milestone5_year": "2024",
+    "milestone5_title": "Sustainable Future",
+    "milestone5_desc": "Committed to eco-friendly operations",
+    "feature1_title": "Global Network",
+    "feature1_desc": "Strategic partnerships across 150+ countries for seamless operations",
+    "feature2_title": "Compliance Expertise",
+    "feature2_desc": "ISO certified with full regulatory compliance in all markets",
+    "feature3_title": "Growth Partner",
+    "feature3_desc": "Scalable solutions that grow with your business needs",
+    "feature4_title": "Dedicated Support",
+    "feature4_desc": "24/7 expert assistance from your personal trade specialists",
+    "about_cta_title": "Ready to Go Global?",
+    "about_cta_subtitle": "Let's discuss how we can help your business expand into new markets with confidence and ease.",
+    "about_cta_primary": "Schedule Consultation",
+    "about_cta_secondary": "View Services",
+    "about_values_title": "Our Core Values",
+    "about_values_subtitle": "The principles that guide everything we do",
+    "about_journey_title": "Our Journey",
+    "about_journey_subtitle": "Key milestones in our growth story",
+    "services_title": "Our Services",
+    "services_subtitle": "Comprehensive import-export solutions designed to streamline your global trade operations",
+    "products_title": "Premium Import Solutions",
+    "products_subtitle": "Discover our curated selection of high-quality products from trusted global suppliers",
+    "products_badge": "PRODUCT CATALOG",
+    "quote_title": "Request a Custom Quote",
+    "quote_subtitle": "Get a personalized shipping quote tailored to your specific needs. Our logistics experts will analyze your requirements and provide competitive pricing within 24 hours.",
+    "quote_badge": "Get Started",
+    "contact_email": "info@globalexports.com",
+    "contact_phone": "+251 991 001 124",
+    "contact_address": "Addis Ababa, Ethiopia",
+    "working_hours": "Mon-Fri, 9 AM - 6 PM",
+    "working_hours_sat": "10 AM - 4 PM",
+    "about_page_badge": "Our Story",
+    "about_page_title": "About Us",
+    "about_page_subtitle": "At TradeFlow, we specialize in connecting businesses across the globe. With years of experience in import and export, we pride ourselves on delivering reliable, efficient, and transparent services.",
+    "services_page_badge": "Our Offerings",
+    "services_page_title": "Services & Products",
+    "services_page_subtitle": "We provide comprehensive import and export solutions tailored to your business needs. From seamless international shipping to customs clearance, we ensure your goods reach their destination safely.",
+    "contact_page_badge": "Contact Us",
+    "contact_page_title": "Get in Touch",
+    "contact_page_subtitle": "We're here to help with your import and export needs. Reach out to our team and we'll get back to you within 24 hours.",
+    "blog_page_badge": "Insights & Updates",
+    "blog_page_title": "Our Blog",
+    "blog_page_subtitle": "Stay updated with the latest insights, trends, and tips in global trade and logistics. Our blog covers everything from import/export regulations to industry news.",
+    "trust_bar_badge": "TRUSTED BY INDUSTRY LEADERS",
+    "trust_bar_title": "Certified and Compliant Across All Major Trade Corridors",
+    "trust_bar_statement": "Our certifications ensure your cargo moves safely and efficiently worldwide.",
+    "cert1_name": "ISO 9001:2015",
+    "cert2_name": "AEO Certified",
+    "cert3_name": "IATA Member",
+    "cert4_name": "C-TPAT Verified",
+    "cert5_name": "5-Star Rating",
+    "cert6_name": "FMC Licensed",
+    "featured_services_badge": "CORE SERVICES",
+    "featured_services_title": "Everything You Need for Global Trade Success",
+    "featured_services_subtitle": "From initial planning to final delivery, our comprehensive suite of services ensures your international trade operations run seamlessly.",
+    "fs1_title": "Global Logistics",
+    "fs1_desc": "End-to-end supply chain management with real-time tracking across air, sea, and land transportation networks.",
+    "fs1_f1": "Multi-modal shipping",
+    "fs1_f2": "Real-time tracking",
+    "fs1_f3": "Global network",
+    "fs2_title": "Customs Clearance",
+    "fs2_desc": "Expert documentation and regulatory compliance services to ensure smooth passage through international borders.",
+    "fs2_f1": "Expert documentation",
+    "fs2_f2": "Regulatory compliance",
+    "fs2_f3": "Fast processing",
+    "fs3_title": "Supply Chain Management",
+    "fs3_desc": "Strategic optimization and analytics to maximize efficiency, reduce costs, and improve delivery performance.",
+    "fs3_f1": "Cost optimization",
+    "fs3_f2": "Performance analytics",
+    "fs3_f3": "Strategic planning",
+    "home_about_badge": "Your Global Trade Partner",
+    "home_about_section_title": "For Modern Business",
+    "home_about_inner_title": "Turning Trade Complexity Into Your Competitive Edge",
+    "home_about_highlight1": "ISO 9001 & 14001 Certified Operations",
+    "home_about_highlight2": "AEO & C-TPAT Trusted Partner Status",
+    "home_about_highlight3": "Real-time Shipment Tracking & Visibility",
+    "home_about_highlight4": "Customs Clearance in 150+ Countries",
+    "home_about_feat1_title": "Compliance Excellence",
+    "home_about_feat1_desc": "Navigate regulations across 150+ countries with confidence",
+    "home_about_feat2_title": "Growth Focused",
+    "home_about_feat2_desc": "Scale operations without operational bottlenecks",
+    "home_about_feat3_title": "24/7 Support",
+    "home_about_feat3_desc": "Expert guidance from dedicated trade specialists",
+    "home_about_cta_title": "Ready to Expand Your Global Reach?",
+    "home_about_cta_subtitle": "Join hundreds of companies who trust us to handle their international trade operations.",
+    "home_about_cta_btn": "Get Started Today",
+    "impact_quote": "\"Every shipment represents a business dream, a market opportunity, and economic growth. We're proud to be the bridge that makes global commerce possible.\"",
+    "impact_quote_author": "-- TradeFlow Leadership Team",
+    "testimonial_badge": "CLIENT SUCCESS STORIES",
+    "testimonial_title": "Trusted by Global Leaders",
+    "testimonial_subtitle": "See what our enterprise clients say about their experience",
+    "blog_hero_badge": "Insights & Resources",
+    "blog_hero_title": "Trade Intelligence & Industry Insights",
+    "blog_hero_subtitle": "Expert perspectives on global trade, logistics innovation, and market trends",
+    "blog_cta_title": "Ready to Optimize Your Trade Operations?",
+    "blog_cta_subtitle": "Let our experts help you navigate global commerce with confidence",
+    "contact_hours_weekday": "9 AM - 6 PM",
+    "contact_hours_sat": "10 AM - 4 PM",
+    "contact_hours_sun": "Closed",
+    "contact_stat1_title": "50+ Countries",
+    "contact_stat1_desc": "Served worldwide",
+    "contact_stat2_title": "24/7 Support",
+    "contact_stat2_desc": "Always here to help",
+    "contact_stat3_title": "Expert Team",
+    "contact_stat3_desc": "10+ years experience",
+    "footer_tagline": "Your trusted partner in global logistics. Connecting businesses worldwide with seamless import-export solutions.",
+    "facebook_url": "https://facebook.com",
+    "twitter_url": "https://twitter.com",
+    "linkedin_url": "https://linkedin.com",
+    "instagram_url": "https://instagram.com",
+    "google_map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.304185416782!2d38.7469643!3d9.0301872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8530b1f5c7b1%3A0x4b7b63e0718f6a6f!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1701532145678!5m2!1sen!2sus",
+    "updated_at": "2026-03-23T11:59:33.399Z"
+  }
+},
+{
+  "model": "content.service",
+  "pk": 1,
+  "fields": {
+    "title": "International Shipping",
+    "description": "Reliable sea, air, and land freight solutions connecting you to over 50 countries worldwide with real-time tracking.",
+    "icon": "Ship",
+    "features": [
+      "Sea Freight",
+      "Air Freight",
+      "Land Transport",
+      "Express Delivery"
+    ],
+    "color": "from-blue-500 to-cyan-500",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.056Z"
+  }
+},
+{
+  "model": "content.service",
+  "pk": 2,
+  "fields": {
+    "title": "Customs Clearance",
+    "description": "Expert handling of all customs documentation, tariff classification, and regulatory compliance to ensure smooth border crossings.",
+    "icon": "FileCheck",
+    "features": [
+      "Documentation",
+      "Tariff Classification",
+      "Duty Calculation",
+      "Compliance"
+    ],
+    "color": "from-[#D4AF37] to-yellow-600",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.071Z"
+  }
+},
+{
+  "model": "content.service",
+  "pk": 3,
+  "fields": {
+    "title": "Warehousing & Storage",
+    "description": "Secure, climate-controlled storage facilities with inventory management and distribution services at strategic locations.",
+    "icon": "Package",
+    "features": [
+      "Climate Control",
+      "Inventory Management",
+      "Pick & Pack",
+      "Distribution"
+    ],
+    "color": "from-purple-500 to-pink-500",
+    "order": 3,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.071Z"
+  }
+},
+{
+  "model": "content.service",
+  "pk": 4,
+  "fields": {
+    "title": "Cargo Insurance",
+    "description": "Comprehensive insurance coverage protecting your shipments against loss, damage, and unforeseen circumstances during transit.",
+    "icon": "Shield",
+    "features": [
+      "Full Coverage",
+      "Claims Support",
+      "Risk Assessment",
+      "Quick Processing"
+    ],
+    "color": "from-green-500 to-emerald-500",
+    "order": 4,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.090Z"
+  }
+},
+{
+  "model": "content.service",
+  "pk": 5,
+  "fields": {
+    "title": "Trade Consulting",
+    "description": "Expert guidance on international trade regulations, market entry strategies, and business expansion opportunities.",
+    "icon": "Globe2",
+    "features": [
+      "Market Research",
+      "Regulatory Advice",
+      "Strategy Planning",
+      "Risk Management"
+    ],
+    "color": "from-indigo-500 to-blue-600",
+    "order": 5,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.104Z"
+  }
+},
+{
+  "model": "content.service",
+  "pk": 6,
+  "fields": {
+    "title": "Door-to-Door Delivery",
+    "description": "Complete logistics solution from pickup at origin to final delivery at destination with full tracking visibility.",
+    "icon": "Truck",
+    "features": [
+      "Pickup Service",
+      "Last Mile Delivery",
+      "Real-time Tracking",
+      "Signature Confirmation"
+    ],
+    "color": "from-orange-500 to-red-500",
+    "order": 6,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.108Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 1,
+  "fields": {
+    "name": "Smartphone Components",
+    "description": "High-quality semiconductor and display components from Asia",
+    "image": "/smartphone-components-circuit-boards.jpg",
+    "category": "import",
+    "type": "Electronics",
+    "price": "Starting from $5,000",
+    "rating": "4.8",
+    "reviews": 245,
+    "order": 1,
+    "is_active": true,
+    "is_published": true,
+    "submitted_by": null,
+    "published_by": [
+      "import_manager"
+    ],
+    "created_at": "2026-03-22T14:54:31.139Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 2,
+  "fields": {
+    "name": "Premium Fabrics",
+    "description": "Cotton, silk, and synthetic fabrics from Indian mills",
+    "image": "/cotton-apparel-clothing-garments-fashion.jpg",
+    "category": "import",
+    "type": "Textiles",
+    "price": "Starting from $2,000",
+    "rating": "4.7",
+    "reviews": 189,
+    "order": 2,
+    "is_active": true,
+    "is_published": true,
+    "submitted_by": null,
+    "published_by": [
+      "import_manager"
+    ],
+    "created_at": "2026-03-22T14:54:31.148Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 3,
+  "fields": {
+    "name": "Industrial Equipment",
+    "description": "CNC machines and manufacturing equipment from Germany and Japan",
+    "image": "/industrial-machinery-equipment-factory.jpg",
+    "category": "import",
+    "type": "Machinery",
+    "price": "Starting from $50,000",
+    "rating": "4.9",
+    "reviews": 156,
+    "order": 3,
+    "is_active": true,
+    "is_published": true,
+    "submitted_by": null,
+    "published_by": [
+      "import_manager"
+    ],
+    "created_at": "2026-03-22T14:54:31.157Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 4,
+  "fields": {
+    "name": "Chemical Compounds",
+    "description": "Industrial chemicals and raw materials from certified suppliers",
+    "image": "/chemical-compounds-laboratory-containers.jpg",
+    "category": "import",
+    "type": "Chemicals",
+    "price": "Starting from $3,000",
+    "rating": "4.6",
+    "reviews": 127,
+    "order": 4,
+    "is_active": true,
+    "is_published": true,
+    "submitted_by": null,
+    "published_by": [
+      "import_manager"
+    ],
+    "created_at": "2026-03-22T14:54:31.172Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 5,
+  "fields": {
+    "name": "Raw Metals",
+    "description": "Aluminum, copper, and steel ingots from mines",
+    "image": "/global-trade-shipping-containers.jpg",
+    "category": "import",
+    "type": "Metals",
+    "price": "Starting from $10,000",
+    "rating": "4.8",
+    "reviews": 198,
+    "order": 5,
+    "is_active": true,
+    "is_published": false,
+    "submitted_by": null,
+    "published_by": null,
+    "created_at": "2026-03-22T14:54:31.175Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 6,
+  "fields": {
+    "name": "Plastic Resins",
+    "description": "Virgin and recycled plastic pellets for manufacturing",
+    "image": "/logistics-warehouse-management.jpg",
+    "category": "import",
+    "type": "Plastics",
+    "price": "Starting from $1,500",
+    "rating": "4.5",
+    "reviews": 134,
+    "order": 6,
+    "is_active": true,
+    "is_published": false,
+    "submitted_by": null,
+    "published_by": null,
+    "created_at": "2026-03-22T14:54:31.187Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 7,
+  "fields": {
+    "name": "Organic Coffee Beans",
+    "description": "Premium arabica and robusta coffee from certified plantations",
+    "image": "/organic-coffee-beans-roasted.jpg",
+    "category": "export",
+    "type": "Agriculture",
+    "price": "Starting from $8,000",
+    "rating": "4.9",
+    "reviews": 312,
+    "order": 7,
+    "is_active": true,
+    "is_published": false,
+    "submitted_by": null,
+    "published_by": null,
+    "created_at": "2026-03-22T14:54:31.187Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 8,
+  "fields": {
+    "name": "Artisan Handcrafted Items",
+    "description": "Traditional wooden and ceramic crafts from local artisans",
+    "image": "/artisan-handicrafts-wooden-ceramic-items.jpg",
+    "category": "export",
+    "type": "Handicrafts",
+    "price": "Starting from $1,000",
+    "rating": "4.7",
+    "reviews": 267,
+    "order": 8,
+    "is_active": true,
+    "is_published": false,
+    "submitted_by": null,
+    "published_by": null,
+    "created_at": "2026-03-22T14:54:31.203Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 9,
+  "fields": {
+    "name": "Premium Spice Blends",
+    "description": "Organic spices including turmeric, cardamom, and cinnamon",
+    "image": "/global-trade-shipping-containers.jpg",
+    "category": "export",
+    "type": "Spices",
+    "price": "Starting from $2,500",
+    "rating": "4.8",
+    "reviews": 289,
+    "order": 9,
+    "is_active": true,
+    "is_published": false,
+    "submitted_by": null,
+    "published_by": null,
+    "created_at": "2026-03-22T14:54:31.207Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 10,
+  "fields": {
+    "name": "Cotton Apparel",
+    "description": "Ready-made clothing and garments for retail distribution",
+    "image": "/cotton-apparel-clothing-garments-fashion.jpg",
+    "category": "export",
+    "type": "Apparel",
+    "price": "Starting from $3,000",
+    "rating": "4.6",
+    "reviews": 201,
+    "order": 10,
+    "is_active": true,
+    "is_published": true,
+    "submitted_by": null,
+    "published_by": [
+      "export_manager"
+    ],
+    "created_at": "2026-03-22T14:54:31.223Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 11,
+  "fields": {
+    "name": "Fresh Seafood",
+    "description": "Frozen and chilled fish, shrimp, and shellfish with cold chain",
+    "image": "/fresh-seafood-fish-shrimp-cold-storage.jpg",
+    "category": "export",
+    "type": "Seafood",
+    "price": "Starting from $15,000",
+    "rating": "4.9",
+    "reviews": 278,
+    "order": 11,
+    "is_active": true,
+    "is_published": true,
+    "submitted_by": null,
+    "published_by": [
+      "export_manager"
+    ],
+    "created_at": "2026-03-22T14:54:31.223Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 12,
+  "fields": {
+    "name": "Tropical Fruits",
+    "description": "Mangoes, pineapples, and tropical fruits shipped fresh",
+    "image": "/asia-trade-ports-business.jpg",
+    "category": "export",
+    "type": "Agriculture",
+    "price": "Starting from $5,000",
+    "rating": "4.7",
+    "reviews": 234,
+    "order": 12,
+    "is_active": true,
+    "is_published": false,
+    "submitted_by": null,
+    "published_by": null,
+    "created_at": "2026-03-22T14:54:31.237Z"
+  }
+},
+{
+  "model": "content.product",
+  "pk": 13,
+  "fields": {
+    "name": "Ezedin Lalega Mohammed",
+    "description": "description",
+    "image": "/smartphone-components-circuit-boards.jpg",
+    "category": "import",
+    "type": "Electronics",
+    "price": "Starting from $3,000",
+    "rating": "4.5",
+    "reviews": 10,
+    "order": 9,
+    "is_active": true,
+    "is_published": false,
+    "submitted_by": [
+      "import_staff"
+    ],
+    "published_by": null,
+    "created_at": "2026-03-24T03:42:03.382Z"
+  }
+},
+{
+  "model": "content.faq",
+  "pk": 1,
+  "fields": {
+    "question": "How long does international shipping typically take?",
+    "answer": "Standard ocean freight takes 15-30 days depending on routes. Air freight takes 3-7 days. Express services are available for time-sensitive shipments.",
+    "order": 1,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.239Z"
+  }
+},
+{
+  "model": "content.faq",
+  "pk": 2,
+  "fields": {
+    "question": "What documents are required for export?",
+    "answer": "Essential documents include commercial invoice, bill of lading, packing list, export license (if applicable), and certificates of origin. Our team handles all documentation.",
+    "order": 2,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.268Z"
+  }
+},
+{
+  "model": "content.faq",
+  "pk": 3,
+  "fields": {
+    "question": "Do you handle customs clearance?",
+    "answer": "Yes, we provide complete customs clearance services including documentation preparation, duty calculations, and coordination with customs authorities.",
+    "order": 3,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.275Z"
+  }
+},
+{
+  "model": "content.faq",
+  "pk": 4,
+  "fields": {
+    "question": "What is your insurance coverage?",
+    "answer": "All shipments include basic insurance coverage. Extended coverage options are available for high-value items, typically up to 110% of shipment value.",
+    "order": 4,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.290Z"
+  }
+},
+{
+  "model": "content.faq",
+  "pk": 5,
+  "fields": {
+    "question": "Can I track my shipment in real-time?",
+    "answer": "All shipments come with real-time tracking. You can monitor your cargo from warehouse to delivery with live updates, GPS tracking, and instant notifications.",
+    "order": 5,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.302Z"
+  }
+},
+{
+  "model": "content.faq",
+  "pk": 6,
+  "fields": {
+    "question": "What are your payment terms?",
+    "answer": "We offer flexible payment options including prepayment, payment on delivery, and credit terms for established partners. Monthly invoicing is available for regular shipments.",
+    "order": 6,
+    "is_active": true,
+    "created_at": "2026-03-22T14:54:31.308Z"
+  }
+},
+{
+  "model": "content.testimonial",
+  "pk": 1,
+  "fields": {
+    "name": "Abebe Bekele",
+    "company": "Bekele Trading Co.",
+    "role": "CEO",
+    "feedback": "Excellent import/export service! Timely delivery and professional team. Highly recommend.",
+    "rating": 5,
+    "image": "",
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-03-22T14:54:31.321Z"
+  }
+},
+{
+  "model": "content.testimonial",
+  "pk": 2,
+  "fields": {
+    "name": "Saba Desta",
+    "company": "Desta Exports Ltd.",
+    "role": "Operations Manager",
+    "feedback": "Smooth process and great communication. They handled all our customs paperwork flawlessly.",
+    "rating": 5,
+    "image": "",
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-03-22T14:54:31.340Z"
+  }
+},
+{
+  "model": "content.testimonial",
+  "pk": 3,
+  "fields": {
+    "name": "Kebede Alemu",
+    "company": "Alemu Global",
+    "role": "Director",
+    "feedback": "Reliable and trustworthy import/export partner. Will work with them again for all our shipments.",
+    "rating": 5,
+    "image": "",
+    "is_active": true,
+    "order": 3,
+    "created_at": "2026-03-22T14:54:31.346Z"
+  }
+},
+{
+  "model": "content.testimonial",
+  "pk": 4,
+  "fields": {
+    "name": "Hana Tadesse",
+    "company": "Tadesse Industries",
+    "role": "Procurement Head",
+    "feedback": "Amazing support and prompt delivery. The real-time tracking feature is a game changer.",
+    "rating": 5,
+    "image": "",
+    "is_active": true,
+    "order": 4,
+    "created_at": "2026-03-22T14:54:31.353Z"
+  }
+},
+{
+  "model": "content.testimonial",
+  "pk": 5,
+  "fields": {
+    "name": "Michael Rodriguez",
+    "company": "Rodriguez Imports",
+    "role": "Founder",
+    "feedback": "Best logistics partner we have worked with. Competitive pricing and zero delays.",
+    "rating": 5,
+    "image": "",
+    "is_active": true,
+    "order": 5,
+    "created_at": "2026-03-22T14:54:31.358Z"
+  }
+},
+{
+  "model": "content.testimonial",
+  "pk": 6,
+  "fields": {
+    "name": "Sarah Chen",
+    "company": "Chen Global Trade",
+    "role": "VP Logistics",
+    "feedback": "Their customs clearance expertise saved us weeks of delays. Truly professional team.",
+    "rating": 5,
+    "image": "",
+    "is_active": true,
+    "order": 6,
+    "created_at": "2026-03-22T14:54:31.358Z"
+  }
+},
+{
+  "model": "staff.staffprofile",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "import_staff"
+    ],
+    "role": "import_staff"
+  }
+},
+{
+  "model": "staff.staffprofile",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "import_manager"
+    ],
+    "role": "import_manager"
+  }
+},
+{
+  "model": "staff.staffprofile",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "export_staff"
+    ],
+    "role": "export_staff"
+  }
+},
+{
+  "model": "staff.staffprofile",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "export_manager"
+    ],
+    "role": "export_manager"
+  }
+}
+]

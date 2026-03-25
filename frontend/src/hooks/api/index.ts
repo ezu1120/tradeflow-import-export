@@ -2,12 +2,10 @@
 import axios from "axios";
 const SERVER_BASE_URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_SERVER_BASE_URL || "";
 
-const NGROK_HEADERS = { "ngrok-skip-browser-warning": "true" };
-
 // Authenticated API — for admin panel requests (attaches token automatically)
 export const api = axios.create({
   baseURL: SERVER_BASE_URL,
-  headers: { "Content-Type": "application/json", ...NGROK_HEADERS },
+  headers: { "Content-Type": "application/json" },
 });
 
 api.interceptors.request.use((config) => {
@@ -29,7 +27,7 @@ api.interceptors.response.use(
 // Public API — for client-facing pages (never sends auth token, always gets published-only data)
 export const publicApi = axios.create({
   baseURL: SERVER_BASE_URL,
-  headers: { "Content-Type": "application/json", ...NGROK_HEADERS },
+  headers: { "Content-Type": "application/json" },
 });
 
 publicApi.interceptors.response.use(
