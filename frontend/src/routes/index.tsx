@@ -7,6 +7,7 @@ import ServicesPage from "@/pages/client/services/page";
 import ContactPage from "@/pages/client/contact/page";
 import BlogPage from "@/pages/client/blog/page";
 import BlogDetailPage from "@/pages/client/blog/detail";
+import ProductsPage from "@/pages/client/products/page";
 
 import AdminLogin from "@/pages/admin/login";
 import AdminLayout, { RequireSection } from "@/pages/admin/layout";
@@ -45,6 +46,7 @@ const Routes = () => {
         { index: true, element: <HomePage /> },
         { path: "/about",        element: <AboutPage /> },
         { path: "/services",     element: <ServicesPage /> },
+        { path: "/products",     element: <ProductsPage /> },
         { path: "/contact",      element: <ContactPage /> },
         { path: "/blog",         element: <BlogPage /> },
         { path: "/blog/:slug",   element: <BlogDetailPage /> },
