@@ -25,6 +25,7 @@ import ServicesAdminPage from "@/pages/admin/pages/services-page";
 import ContactAdminPage from "@/pages/admin/pages/contact-page";
 import BlogAdminPage from "@/pages/admin/pages/blog-page";
 import FooterAdminPage from "@/pages/admin/pages/footer-page";
+import ProductsAdminPage from "@/pages/admin/pages/products-page";
 
 // Global settings
 import SettingsCompany from "@/pages/admin/settings/company";
@@ -72,6 +73,7 @@ const Routes = () => {
         { path: "pages/home",     element: <R section="pages" el={<HomeAdminPage />} /> },
         { path: "pages/about",    element: <R section="pages" el={<AboutAdminPage />} /> },
         { path: "pages/services", element: <R section="pages" el={<ServicesAdminPage />} /> },
+        { path: "pages/products", element: <R section="pages" el={<ProductsAdminPage />} /> },
         { path: "pages/contact",  element: <R section="pages" el={<ContactAdminPage />} /> },
         { path: "pages/blog",     element: <R section="pages" el={<BlogAdminPage />} /> },
         { path: "pages/footer",   element: <R section="pages" el={<FooterAdminPage />} /> },

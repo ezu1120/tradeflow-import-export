@@ -30,7 +30,8 @@ const mainNav = [
 const pageNav = [
   { label: "Home Page",     href: "/1/pages/home",    icon: Home,          section: "pages" },
   { label: "About Page",    href: "/1/pages/about",   icon: Info,          section: "pages" },
-  { label: "Services Page", href: "/1/pages/services",icon: Briefcase,     section: "pages" },
+  { label: "Services Page", href: "/1/pages/services",  icon: Briefcase,     section: "pages" },
+  { label: "Products Page", href: "/1/pages/products",  icon: Package,       section: "pages" },
   { label: "Contact Page",  href: "/1/pages/contact", icon: Phone,         section: "pages" },
   { label: "Blog Page",     href: "/1/pages/blog",    icon: BookOpen,      section: "pages" },
   { label: "Footer",        href: "/1/pages/footer",  icon: LayoutTemplate,section: "pages" },
