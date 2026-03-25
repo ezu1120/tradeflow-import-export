@@ -108,7 +108,7 @@ export default function ImportExportServices() {
           ))}
         </div>
 
-        <h2 className="text-2xl font-bold py-8 text-white">Our Products</h2>
+        <h2 id="products" className="text-2xl font-bold py-8 text-white">Our Products</h2>
         <Tabs value={activeTab} onValueChange={(val) => setActiveTab(val as "import" | "export")} className="w-full">
           <TabsList className="grid w-full max-w-xs grid-cols-2 mb-6 bg-slate-800/50 border border-slate-700/50">
             <TabsTrigger value="import" className="text-base text-white data-[state=active]:bg-[#FFD700] data-[state=active]:text-[#101828]">Import</TabsTrigger>
