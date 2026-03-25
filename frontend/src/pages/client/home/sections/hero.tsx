@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Globe2, TrendingUp, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 
@@ -8,106 +7,149 @@ export default function HeroSection() {
   const navigate = useNavigate();
   const { settings } = useSiteSettings();
 
-  const scrollToQuoteForm = () => {
-    const quoteSection = document.getElementById('quote-form');
-    if (quoteSection) {
-      quoteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const scrollToQuote = () => {
+    document.getElementById("quote-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#101828] pt-[82px]">
-      {/* Background Image with Overlay */}
+    <section className="relative w-full min-h-screen overflow-hidden bg-[#0a1120] pt-[82px]">
+
+      {/* Background */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop')`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#101828]/95 via-[#101828]/85 to-[#101828]/70" />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop')` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1120]/97 via-[#0a1120]/88 to-[#0a1120]/75" />
+        {/* Gold glow accents */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#D4AF37]/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-blue-500/8 rounded-full blur-3xl" />
       </div>
 
-      {/* Content */}
-      <div className="relative h-full flex items-center py-4 mt-8">
+      {/* Grid overlay */}
+      <div className="absolute inset-0 opacity-[0.03]"
+        style={{ backgroundImage: "linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+
+      {/* Main content */}
+      <div className="relative h-full flex items-center py-16">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left — Text */}
+            <div>
               {/* Badge */}
-              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 mb-8">
-                <span className="text-[#D4AF37] text-xs font-semibold tracking-wide">
-                  {settings.hero_badge_text}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 mb-8">
+                <div className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+                <span className="text-[#D4AF37] text-xs font-semibold tracking-widest uppercase">
+                  {settings.hero_badge_text || "Trusted Global Trade Partner"}
                 </span>
-              </div>
+              </motion.div>
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tight">
-                {settings.hero_title}{" "}
-                <span className="text-[#D4AF37] block">{settings.hero_title_highlight}</span>
-              </h1>
+              {/* Headline */}
+              <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
+                {settings.hero_title || "Global Trade"}{" "}
+                <span className="relative">
+                  <span className="text-[#D4AF37]">{settings.hero_title_highlight || "Simplified."}</span>
+                  <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.9 }}
+                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] to-transparent origin-left rounded-full" />
+                </span>
+              </motion.h1>
 
-              {/* Sub-headline */}
-              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-10 leading-relaxed max-w-3xl font-light">
-                {settings.hero_subtitle}
-              </p>
+              {/* Subtitle */}
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-lg text-white/75 mb-10 leading-relaxed max-w-xl font-light">
+                {settings.hero_subtitle || "Expert Import-Export solutions connecting your business to the world's most lucrative markets."}
+              </motion.p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-[#101828] font-bold text-base h-12 px-8 rounded-xl shadow-2xl hover:shadow-[#D4AF37]/25 transition-all duration-300 transform hover:scale-105"
-                  onClick={scrollToQuoteForm}
-                >
-                  {settings.hero_cta_primary}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 font-semibold text-base h-12 px-8 rounded-xl backdrop-blur-sm transition-all duration-300"
-                  onClick={() => navigate("/services")}
-                >
-                  <Play className="mr-2 h-4 w-4" />
-                  {settings.hero_cta_secondary}
-                </Button>
-              </div>
+              {/* CTAs */}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-col sm:flex-row gap-4 mb-12">
+                <button onClick={scrollToQuote}
+                  className="group flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-[#101828] font-bold text-sm h-13 px-8 py-4 rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 transition-all duration-300 hover:scale-105">
+                  {settings.hero_cta_primary || "Request a Quote"}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button onClick={() => navigate("/products")}
+                  className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-[#D4AF37]/50 font-semibold text-sm h-13 px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300">
+                  <Globe2 className="w-4 h-4 text-[#D4AF37]" />
+                  {settings.hero_cta_secondary || "Our Products"}
+                </button>
+              </motion.div>
 
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-6 mt-12 pt-8 border-t border-white/10">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#D4AF37] mb-1">{settings.stat_years}</div>
-                  <div className="text-xs text-white/70 font-medium">{settings.stat_years_label}</div>
+              {/* Stats row */}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.8 }}
+                className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
+                {[
+                  { value: settings.stat_years || "10+",    label: settings.stat_years_label || "Years Experience" },
+                  { value: settings.stat_countries || "50+", label: settings.stat_countries_label || "Countries Served" },
+                  { value: settings.stat_shipments || "500+", label: settings.stat_shipments_label || "Products Available" },
+                ].map((s, i) => (
+                  <div key={i}>
+                    <div className="text-3xl font-black text-[#D4AF37]">{s.value}</div>
+                    <div className="text-xs text-white/50 font-medium mt-0.5">{s.label}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Right — Floating cards */}
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
+              className="hidden lg:flex flex-col gap-4">
+
+              {/* Card 1 */}
+              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/20 flex items-center justify-center flex-shrink-0">
+                  <Globe2 className="w-6 h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#D4AF37] mb-1">{settings.stat_countries}</div>
-                  <div className="text-xs text-white/70 font-medium">{settings.stat_countries_label}</div>
+                <div>
+                  <p className="text-white font-semibold text-sm">Global Network</p>
+                  <p className="text-white/50 text-xs mt-0.5">Active in 50+ countries worldwide</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#D4AF37] mb-1">{settings.stat_shipments}</div>
-                  <div className="text-xs text-white/70 font-medium">{settings.stat_shipments_label}</div>
+                <div className="ml-auto text-[#D4AF37] font-bold text-lg">50+</div>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex items-center gap-4 ml-8">
+                <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-6 h-6 text-green-400" />
                 </div>
-              </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">Trade Growth</p>
+                  <p className="text-white/50 text-xs mt-0.5">Consistent year-over-year growth</p>
+                </div>
+                <div className="ml-auto text-green-400 font-bold text-lg">↑98%</div>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div animate={{ y: [0, -6, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-blue-400" />
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">Secure & Certified</p>
+                  <p className="text-white/50 text-xs mt-0.5">ISO certified trade operations</p>
+                </div>
+                <div className="ml-auto text-blue-400 font-bold text-sm">ISO ✓</div>
+              </motion.div>
+
+              {/* Decorative ring */}
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-[#D4AF37]/10 pointer-events-none" />
+              <div className="absolute right-16 top-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-[#D4AF37]/5 pointer-events-none" />
             </motion.div>
+
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center text-white/60">
-          <span className="text-xs font-medium mb-2 tracking-wider">SCROLL TO EXPLORE</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/60 to-transparent"></div>
-        </div>
+      {/* Scroll indicator */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/40">
+        <span className="text-[10px] font-medium tracking-widest mb-2">SCROLL TO EXPLORE</span>
+        <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}
+          className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent" />
       </motion.div>
     </section>
   );
