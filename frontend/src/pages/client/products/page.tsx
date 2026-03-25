@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { publicApi } from "@/hooks/api";
 
 interface Product {
@@ -69,11 +70,28 @@ export default function ProductsPage() {
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-slate-900 to-slate-950">
       {/* Page Header */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700/50 pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-semibold px-3 py-1 rounded-full border border-[#D4AF37]/20 mb-4">Our Products</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Import & Export <span className="text-[#D4AF37]">Products</span></h1>
-          <p className="text-slate-300 max-w-2xl mx-auto">Browse our full range of import and export products, verified for quality and ready for global trade.</p>
+      <div className="relative h-[400px] w-full flex justify-center items-center overflow-hidden"
+        style={{ backgroundImage: "url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#101828]/95 via-slate-900/90 to-indigo-950/85"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative flex flex-col text-center px-4 sm:px-8 max-w-5xl z-10">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-2 mx-auto">
+            <span className="text-sm font-medium text-[#D4AF37] uppercase tracking-wider">Our Catalogue</span>
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+            Import & <span className="text-[#D4AF37]">Export Products</span>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Browse our full range of verified import and export products, ready for global trade.
+          </motion.p>
+          <motion.div initial={{ width: 0 }} animate={{ width: "6rem" }} transition={{ duration: 0.8, delay: 0.6 }}
+            className="h-1 bg-gradient-to-r from-[#D4AF37] to-transparent mx-auto mt-8" />
         </div>
       </div>
 

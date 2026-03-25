@@ -20,9 +20,7 @@ const PageHeader = () => {
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
-          {settings.services_page_title.split(' ').map((word, i, arr) =>
-            i === arr.length - 1 ? <span key={i} className="text-[#D4AF37]"> {word}</span> : word + ' '
-          )}
+          Our <span className="text-[#D4AF37]">Services</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
