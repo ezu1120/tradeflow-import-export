@@ -34,3 +34,16 @@ for username, password, role in [
 
 python manage.py populate_blog || true
 python manage.py populate_content || true
+
+# Load data fixture if database is empty
+python manage.py shell -c "
+from django.contrib.auth.models import User
+if User.objects.count() <= 1:
+    import subprocess
+    result = subprocess.run(['python', 'manage.py', 'loaddata', 'data_dump.json'], capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
+    print('Data fixture loaded')
+else:
+    print('Data already exists, skipping fixture load')
+"
