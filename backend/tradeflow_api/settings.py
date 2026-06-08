@@ -91,10 +91,15 @@ _database_url = config('DATABASE_URL', default='')
 _mysql_host = config('MYSQL_HOST', default='')
 
 if _database_url:
+    # Strip unsupported params that cause psycopg3 issues
+    _clean_url = _database_url.replace('&channel_binding=require', '').replace('?channel_binding=require', '')
+    if '?' not in _clean_url and 'sslmode' not in _clean_url:
+        _clean_url += '?sslmode=require'
     DATABASES = {
         'default': dj_database_url.config(
-            default=_database_url,
+            default=_clean_url,
             conn_max_age=600,
+            engine='django.db.backends.postgresql',
         )
     }
 elif _mysql_host:
