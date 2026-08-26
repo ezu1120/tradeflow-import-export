@@ -3,7 +3,7 @@ import { Save, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { SETTINGS_API } from "@/hooks/useSiteSettings";
 
-const BACKEND = import.meta.env.VITE_API_URL || "https://tradeflow-import-export-2.onrender.com";
+const BACKEND = import.meta.env.VITE_API_URL || "https://api-tradeflow.ethiohotel.site";
 
 interface Settings {
   company_name: string; company_tagline: string; company_description: string;
@@ -98,7 +98,6 @@ export default function SiteSettingsPage() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      const BACKEND = import.meta.env.VITE_API_URL || "https://tradeflow-import-export-2.onrender.com";
       const res = await fetch(`${BACKEND}/api/settings/update/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

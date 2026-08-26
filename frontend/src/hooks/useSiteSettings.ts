@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 
-export const SETTINGS_API = (import.meta.env.VITE_API_URL || "https://tradeflow-import-export-2.onrender.com") + "/api/settings/";
+export const SETTINGS_API = (import.meta.env.VITE_API_URL || "https://api-tradeflow.ethiohotel.site") + "/api/settings/";
 
 export interface SiteSettings {
   company_name: string; company_tagline: string; company_description: string;

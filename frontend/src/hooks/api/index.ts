@@ -1,6 +1,6 @@
 // lib/axios.ts
 import axios from "axios";
-const SERVER_BASE_URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_SERVER_BASE_URL || "";
+const SERVER_BASE_URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_SERVER_BASE_URL || "https://api-tradeflow.ethiohotel.site";
 
 // Authenticated API — for admin panel requests (attaches token automatically)
 export const api = axios.create({
